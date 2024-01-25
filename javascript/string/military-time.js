@@ -1,7 +1,7 @@
-const militaryTime = (s) => {
+const militaryTime = s => {
     // 12:15:00AM
-    const [hour, minute, secondsWithAMPM] = s.split(":"); // [12,15,00AM]
-    const [second, period] = secondsWithAMPM.split(/(AM|PM)/); // [00,AM]
+    const [hour, minute, secondsWithAMPM] = s.split(":"); // ["12","15","00AM"]
+    const [second, period] = secondsWithAMPM.split(/(AM|PM)/); // ["00","AM"]
     let newHour = parseInt(hour, 10);
 
     if (period === "PM") {
@@ -15,7 +15,7 @@ const militaryTime = (s) => {
 
 // -------------------------------------------------------------
 
-const militaryTimeAlt = (s) => {
+const militaryTimeAlt = s => {
     // 07:45:00PM (error-prone)
     const HH = s.slice(0, 2);
     const MM = s.slice(3, 5);
