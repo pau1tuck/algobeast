@@ -22,15 +22,13 @@ This function only uses a fixed amount of space (for the index variable and a fe
 // ---------------------------------------------
 
 function checkPalindrome(str) {
-    return str === inputString.split("").reverse().join("");
+    return str === str.split("").reverse().join("");
 }
 /* Time Complexity: O(n)
 .split(""), .reverse(), and .join("") each have a time complexity of O(n), where n is the length of the string.
 
 / Space Complexity: O(n)
 .split("") creates a new array of size n, and .join("") creates a new string of size n. This results in additional space usage proportional to the size of the input string. */
-
-
 
 // ---------------------------------------------
 

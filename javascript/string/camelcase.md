@@ -1,3 +1,8 @@
+# String Challenges
+
+## Convert to Camelcase
+
+```javascript
 function toCamelCase(phrase) {
     const words = phrase.split(" ");
 
@@ -18,3 +23,4 @@ function toCamelCase(phrase) {
 const inputPhrase = "short phrase to camel case";
 const camelCaseResult = toCamelCase(inputPhrase);
 console.log(camelCaseResult); // Outputs: "shortPhraseToCamelCase"
+```
