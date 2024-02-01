@@ -1,6 +1,7 @@
-//! FIND DUPLICATES ***/
+//! *** FIND DUPLICATES ***/
 /* You're given a string that represents a list of names, separated by commas.
-/* Write a function that finds and returns the FIRST name that appears more than once in the list. If no name is repeated, return a message. */
+Write a function that finds and returns the FIRST name that appears more than once in the list.
+If no name is repeated, return a message. */
 
 findDuplicate = names => {
     const nameCounts = {};

@@ -1,6 +1,6 @@
-/* CHECK PERMUTATION / ANAGRAM */
+//! *** CHECK FOR ANAGRAMS ***/
 
-// Build a frequency map of characters from a given string.
+// 1. Build a frequency map of characters from a given string.
 const makeFrequencyMap = str => {
     const frequencyMap = {};
 
@@ -15,8 +15,8 @@ const makeFrequencyMap = str => {
 };
 
 /*** ----------------------------------------------------------------------------- ***/
-// Determine if two strings are anagrams:
-const areAnagrams = (str1, str2) => {
+// 2. Determine if two strings are anagrams:
+const checkForAnagrams = (str1, str2) => {
     // If the lengths of the two cleaned strings are different, they cannot be anagrams.
     if (str1.length !== str2.length) {
         return false;
