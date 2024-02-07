@@ -47,3 +47,8 @@ function isBalanced(s) {
 	// If the stack is empty, all open brackets were correctly closed.
 	return stack.length === 0;
 }
+/* Explanation: The function isBalanced takes a string s as input.
+- A stack (an array in JavaScript) is used to keep track of opening brackets.
+- A bracketMap object is defined to map each closing bracket to its corresponding opening bracket. This helps in matching pairs easily./
+The function iterates over each character in the string. If an opening bracket is encountered, it's pushed onto the stack. If a closing bracket is encountered, the function checks if the top item of the stack is the corresponding opening bracket by using the bracketMap. If it matches, the top item is popped from the stack (indicating that the pair is balanced). If it doesn't match or if the stack is empty when a closing bracket is encountered, the function returns false, indicating that the string is not balanced.
+After the loop, if the stack is empty, it means all opening brackets were properly closed in the correct order, so the function returns true. If the stack is not empty, there are unmatched opening brackets, so the function returns false. */
