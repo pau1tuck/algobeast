@@ -9,12 +9,12 @@ function checkPermutation(str1, str2) {
 
     const charCount = {};
 
-    // Map str1
+    // Map first string
     for (let char of str1) {
         charCount[char] = (charCount[char] || 0) + 1;
     } // 'd' = 0 + 1
 
-    // Map str2
+    // Map second string
     for (let char of str2) {
         if (!charCount[char]) {
             return false;
