@@ -1,47 +1,35 @@
-//! *** CHECK FOR ANAGRAMS ***/
+// Check two strings to see if they are anagrams.
 
-// 1. Build a frequency map of characters from a given string.
-const makeFrequencyMap = str => {
-    const frequencyMap = {};
+const makeFrequencyMap = (str) => {
+	const frequencyMap = {};
 
-    for (const char of str) {
-        // e.g. "s" of "strings"
-        frequencyMap[char] = (frequencyMap[char] || 0) + 1;
-        // 1. Hashmap "s" value = (falsy, so 0) + 1 = 1; now {"s": 1} exists in the frequency map.
-        // 2. Hashmap "s" value = 1 + 1 = 2
-    }
-    // Return the frequency map object.
-    return frequencyMap;
+	for (const char of str) {
+		// e.g. "s" of "strings"
+		frequencyMap[char] = (frequencyMap[char] || 0) + 1;
+		// 1. Hashmap "s" value = (falsy, so 0) + 1 = 1; now {"s": 1} exists in the frequency map.
+		// 2. Hashmap "s" value = 1 + 1 = 2
+	}
+	return frequencyMap;
 };
 
-/*** ----------------------------------------------------------------------------- ***/
-// 2. Determine if two strings are anagrams:
-const checkForAnagrams = (str1, str2) => {
-    // If the lengths of the two cleaned strings are different, they cannot be anagrams.
-    if (str1.length !== str2.length) {
-        return false;
-    }
+const areAnagrams = (str1, str2) => {
+	if (str1.length !== str2.length) {
+		return false;
+	}
+	const frequencyMap1 = makeFrequencyMap(str1.toLowerCase());
+	const frequencyMap2 = makeFrequencyMap(str2.toLowerCase());
 
-    // Build a frequency map for each string:
-    const frequencyMap1 = makeFrequencyMap(str1.toLowerCase());
-    const frequencyMap2 = makeFrequencyMap(str2.toLowerCase());
-
-    // Loop through each character key in the first frequency map:
-    for (const char in frequencyMap1) {
-        // Compare the frequency of the current character in both maps.
-        // If they don't match for any character, the strings are not anagrams.
-        if (frequencyMap1[char] !== frequencyMap2[char]) {
-            return false;
-        }
-    }
-    // If the function hasn't returned false by this point, the strings are anagrams.
-    return true;
+	for (const char in frequencyMap1) {
+		if (frequencyMap1[char] !== frequencyMap2[char]) {
+			return false;
+		}
+	}
+	return true;
 };
+
+function removeSpacesAndPunctuation(str) {
+	// Optional
+	return str.replace(/[^\w]/g, ""); // Remove non-word characters
+}
 
 areAnagrams("listen", "silent"); // true
-
-/*** ------------------------------------------------------------------------------ ***/
-/*** Optional error handling: ***/
-function removeSpacesAndPunctuation(str) {
-    return str.replace(/[^\w]/g, ""); // Remove non-word characters
-}
