@@ -2,7 +2,6 @@
 const factorialize = (n) => {
     // if (n < 0) return -1; // Edge case: n is negative
     // if (n === 0) return 1; // Edge case: note: 0! = 1.
-
     let factorial = 1;
     for (let i = 1; i <= n; i++) {
         factorial *= i;
@@ -15,6 +14,7 @@ const factorialize = (n) => {
 
 const factorializeRecursion = (n) => {
     // recursion
+
     if (n < 0) return -1;
     else if (n === 0) return 1;
     else {
