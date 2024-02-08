@@ -15,7 +15,4 @@ function toCamelCase(phrase) {
 
 	return camelCaseString;
 }
-
-const inputPhrase = "short phrase to camel case";
-const camelCaseResult = toCamelCase(inputPhrase);
-console.log(camelCaseResult); // Outputs: "shortPhraseToCamelCase"
+// Time: O(n), Space: O(n)
