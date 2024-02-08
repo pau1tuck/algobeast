@@ -1,13 +1,10 @@
-//  Problem: Extract Dates from a String
+// Return an array containing all of the dates within the given string.
 
 function extractDates(text) {
-	// Define the regex pattern to match dates
 	const datePattern = /\b\d{2}[-\/ ]\d{2}[-\/ ]\d{4}\b/g;
 
-	// Use the regex to find matches in the text
 	const matches = text.match(datePattern);
 
-	// If there are matches, return them; otherwise, return an empty array
 	return matches || [];
 }
 /* The forward slashes /.../ are the delimiters that mark the beginning and end of the regex pattern in JavaScript.

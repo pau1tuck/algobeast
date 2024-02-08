@@ -1,4 +1,4 @@
-// Check if a string contains every letter of the alphabet.
+// Check whether the given string contains every letter of the alphabet.
 
 function isPangram(string) {
 	const alphabet = "abcdefghijklmnopqrstuvwxyz";

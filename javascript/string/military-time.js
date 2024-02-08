@@ -1,4 +1,4 @@
-// Convert 12 hour clock time to military time.
+// Convert 12-hour clock time to military clock time.
 
 const militaryTime = (s) => {
 	// 12:15:00AM
