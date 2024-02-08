@@ -1,11 +1,17 @@
-//! *** VOWELS AND CONSONANTS ***
+// Return the number of vowels and consonants in the given string.
 
-function returnVowelsAndConsonants(s) {
-    const vowels = s.match(/[aeiou]/gi) || [];
-    const consonants = s.match(/[bcdfghjklmnpqrstvwxyz]/gi) || [];
+function countVowelsAndConsonants(s) {
+	const vowels = new Set(["a", "e", "i", "o", "u"]);
+	let vowelCount = 0;
+	let consonantCount = 0;
 
-    return {
-        sortedVowels: vowels.sort(),
-        sortedConsonants: consonants.sort(),
-    };
+	for (const char of s.toLowerCase()) {
+		if (vowels.has(char)) {
+			vowelCount++;
+		} else if (/[a-z]/.test(char)) {
+			consonantCount++;
+		}
+	}
+
+	return { vowelCount, consonantCount };
 }
