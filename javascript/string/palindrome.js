@@ -4,13 +4,13 @@
 // ---------------------------------------------
 // OPTIMAL SOLUTION:
 
-function checkPalindrome(str) {
-    for (let i = 0; i < str.length / 2; i++) {
-        if (str[i] !== str[str.length - 1 - i]) {
-            return false;
-        }
-    }
-    return true;
+function checkPalindrome1(str) {
+	for (let i = 0; i < str.length / 2; i++) {
+		if (str[i] !== str[str.length - 1 - i]) {
+			return false;
+		}
+	}
+	return true;
 }
 
 /* Time Complexity: O(n)
@@ -21,8 +21,8 @@ This function only uses a fixed amount of space (for the index variable and a fe
 
 // ---------------------------------------------
 
-function checkPalindrome(str) {
-    return str === str.split("").reverse().join("");
+function checkPalindrome2(str) {
+	return str === str.split("").reverse().join("");
 }
 /* Time Complexity: O(n)
 .split(""), .reverse(), and .join("") each have a time complexity of O(n), where n is the length of the string.
