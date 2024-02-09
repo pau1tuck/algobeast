@@ -1,3 +1,5 @@
+// Return the given array backwards. Do not use pop, push, shift, or unshift.
+
 function reverseArray(arr) {
 	let start = 0;
 	let end = arr.length - 1;
@@ -9,3 +11,4 @@ function reverseArray(arr) {
 		end--;
 	}
 }
+// Time: O(n), Space: O(1)

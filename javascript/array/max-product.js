@@ -3,7 +3,7 @@
 // Positive integers only:
 const highestPositiveProductPair = (arr) => {
 	// (Positive integers only)
-	let highestInt = 0; // Initialize temp variables
+	let highestInt = 0; // Initialize holding variables
 	let nextHighestInt = 0;
 
 	for (let i = 0; i < arr.length; i++) {
