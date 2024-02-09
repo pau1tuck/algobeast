@@ -1,5 +1,3 @@
-//? REGULAR EXPRESSIONS
-
 /* You'll be given a string of words, possibly including punctuation and special characters.
 Your task is to find the longest word within that string.
 If there are two or more words of the same length that qualify as the longest, just return the first one you encounter. */
