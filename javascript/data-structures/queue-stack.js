@@ -1,4 +1,4 @@
-//? QUEUE
+//? QUEUE STACK
 
 /* Similar to stacks, but FIFO (First In, First Out), queue is another fundamental data structure.
 
