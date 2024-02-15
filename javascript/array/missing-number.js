@@ -1,7 +1,7 @@
 function findMissingNumber(arr) {
     const n = arr.length + 1; // Expected length of the sequence (including the missing number)
 
-    // Calculate the expected sum of all integers from 1 to N
+    // Calculate the expected sum of all integers from 1 to n
     const expectedSum = (n * (n + 1)) / 2;
 
     let actualSum = 0;
