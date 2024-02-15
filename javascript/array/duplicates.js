@@ -15,3 +15,12 @@ const hasDuplicates = arr => {
     // If sizes are not equal, it means there were duplicates in the array.
     return !sizesAreEqual;
 };
+
+const removeDuplicates = arr => {
+    // Remove duplicates by converting the array to a Set, then back to an array:
+    const uniqueArray = Array.from(new Set(arr));
+
+    return uniqueArray;
+}
+
+const findDuplicates = (arr) => {}
