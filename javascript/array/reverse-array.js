@@ -1,4 +1,4 @@
-// Return the given array backwards. Do not use pop, push, shift, or unshift.
+// Return the given array in reverse. Do not use pop, push, shift, or unshift.
 
 function reverseArray(arr) {
 	let start = 0;

@@ -9,7 +9,10 @@ function minMaxSum(arr) {
 }
 
 function minMaxSumNoSort(arr) {
-    let min = arr[0], max = arr[0], totalSum = arr[0];
+    let min = arr[0]
+    let max = arr[0]
+    let totalSum = arr[0];
+
     for (let i = 1; i < arr.length; i++) {
         totalSum += arr[i]; // Sum all elements
         if (arr[i] < min) min = arr[i]; // Find minimum
@@ -17,5 +20,6 @@ function minMaxSumNoSort(arr) {
     }
     let minSum = totalSum - max; // Subtract max to get min sum
     let maxSum = totalSum - min; // Subtract min to get max sum
+
     console.log(minSum, maxSum);
 }
