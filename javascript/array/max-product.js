@@ -1,7 +1,7 @@
 /* Given an array of integers, return the highest product you can get from two of the integers. */
 
 // Positive integers only:
-const highestPositiveProductPair = (arr) => {
+const maxPositiveProductPair = (arr) => {
 	// (Positive integers only)
 	let highestInt = 0; // Initialize holding variables
 	let nextHighestInt = 0;
@@ -22,7 +22,7 @@ const highestPositiveProductPair = (arr) => {
 // The best solution is to use a greedy approach where we track the highest and next-highest integers at each point in the array.
 // This has a time complexity of O(n) since we only walk through the array once. */
 
-const highestProductPair = (arr) => {
+const maxProductPair = (arr) => {
 	let highestInt = -Infinity; // Initialize temp variables
 	let nextHighestInt = -Infinity;
 	let lowestInt = Infinity;
