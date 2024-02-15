@@ -31,5 +31,3 @@ function removeSpacesAndPunctuation(str) {
 	// Optional
 	return str.replace(/[^\w]/g, ""); // Remove non-word characters
 }
-
-areAnagrams("listen", "silent"); // true
