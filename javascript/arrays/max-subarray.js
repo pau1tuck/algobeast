@@ -26,18 +26,16 @@ function maxSubarraySumExplained(arr) {
 
     // Initialize maxEndingHere with the first element.
     // This variable tracks the maximum sum of subarrays ending at the current position.
-    let maxEndingHere = arr[0];
+    let maxEndingHere = arr[0]; // or `let localMax`
 
     // Initialize maxSoFar with the same first element.
     // This variable keeps track of the overall maximum sum found so far.
-    let maxSoFar = arr[0];
+    let maxSoFar = arr[0]; // or `let globalMax`
 
     // Start looping from the second element since we already used the first one to initialize
     for (let i = 1; i < arr.length; i++) {
-        // Update maxEndingHere to the maximum of the current element itself
-        // or the sum of the current element and maxEndingHere.
-        // This step effectively 'extends' the subarray to include the current element, or
-        // starts a new subarray from the current element if that leads to a higher sum.
+        // Update maxEndingHere to the maximum of the current element itself or the sum of the current element and maxEndingHere.
+        // This step effectively 'extends' the subarray to include the current element, or starts a new subarray from the current element if that leads to a higher sum.
         maxEndingHere = Math.max(arr[i], maxEndingHere + arr[i]);
 
         // Update maxSoFar to the maximum of itself and the new maxEndingHere.
