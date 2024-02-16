@@ -1,13 +1,12 @@
-/* MAXIMUM SUBARRAY / KADANE'S ALGORITHM */
-/*
-The objective is to find a contiguous subarray within a one-dimensional array of numbers that has the largest sum. Kadane's algorithm solves this in linear time.
-*/
+// Find a contiguous subarray within a one-dimensional array of numbers that has the largest sum.
 
 function maxSubarraySum(arr) {
-    let maxEndingHere = arr[-1]; // Initialize with the first element
-    let maxSoFar = arr[-1]; // Initialize with the first element
+    if (arr.length === 0) return 0; // Edge case
 
-    for (let i = 0; i < arr.length; i++) {
+    let maxEndingHere = arr[0]; // Initialize with the first element
+    let maxSoFar = arr[0]; // Initialize with the first element
+
+    for (let i = 1; i < arr.length; i++) {
         // Compare the current element with the sum ending at the previous index
         // Update maxEndingHere to either the current element or the sum ending at the previous index + current element
         maxEndingHere = Math.max(arr[i], maxEndingHere + arr[i]);
@@ -15,7 +14,6 @@ function maxSubarraySum(arr) {
         // Update maxSoFar to the maximum of maxSoFar and maxEndingHere
         maxSoFar = Math.max(maxSoFar, maxEndingHere);
     }
-
     return maxSoFar; // Return the maximum subarray sum
 }
 // Time: O(n), Space: O(1)
@@ -36,8 +34,6 @@ function maxSubarraySumExplained(arr) {
 
     // Start looping from the second element since we already used the first one to initialize
     for (let i = 1; i < arr.length; i++) {
-        // Technique: Dynamic Programming - We build up the solution using previously computed values.
-
         // Update maxEndingHere to the maximum of the current element itself
         // or the sum of the current element and maxEndingHere.
         // This step effectively 'extends' the subarray to include the current element, or
