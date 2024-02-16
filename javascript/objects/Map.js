@@ -1,3 +1,4 @@
+let map = new Map();
 Map.set(key, value); //: entire Map
 Map.get(key); //: x or undefined
 Map.has(key); //: boolean
@@ -5,37 +6,32 @@ Map.delete(key); //: boolean
 Map.clear(); // Clear all entries
 Map.size; // Property for number of entries
 
-// Iteration methods
+// Iteration
 let keys = Map.keys(); // Iterator for keys
+let values = Map.values(); // Iterator for values
+let entries = Map.entries(); // Iterator for [key, value] pairs
 for (let key of keys) {
     console.log(key); // Will log 'a', 'b', 'c'
 }
-let keysArray = [...Map.keys()]; // ['a', 'b', 'c']
 
-
-let values = Map.values(); // Iterator for values
-
-Map.entries(); // Iterator for [key, value] pairs
-
-// forEach method for iteration
+for (let [key, value] of map.entries()) {
+    console.log(`${key}: ${value}`); // This will log 'a: 1', 'b: 2', 'c: 3'
+}
 Map.forEach((value, key, map) => {
     // Function to execute for each entry
 });
+Map.forEach(([key, value]) => {
+    // Function using key and value
+});
 
-// Conversion to arrays
-[...map]; // Convert to array of [key, value] pairs
-[...Map.keys()]; // Convert keys to array
-[...Map.values()]; // Convert values to array
-
-// Direct iteration using for...of
 for (let [key, value] of map) {
     // Access key and value
 }
 
-// Destructuring in function parameters
-Map.forEach(([key, value]) => {
-    // Function using key and value
-});
+// Conversion to arrays
+[...map]; // Convert to array of [key, value] pairs
+let keysArray = [...Map.keys()]; // ['a', 'b', 'c']
+let valuesArray = [...Map.values()]; // Convert values to array
 
 /*
 ADVANTAGES OF MAP OBJECT:
