@@ -1,32 +1,31 @@
-let map = new Map();
-map.set(key, value); //: entire Map
-map.get(key); //: x or undefined
-map.has(key); //: boolean
-map.delete(key); //: boolean
-map.clear(); // Clear all entries
-map.size; // Property for number of entries
+Map.set(key, value); //: entire Map
+Map.get(key); //: x or undefined
+Map.has(key); //: boolean
+Map.delete(key); //: boolean
+Map.clear(); // Clear all entries
+Map.size; // Property for number of entries
 
 // Iteration methods
-let keys = map.keys(); // Iterator for keys
+let keys = Map.keys(); // Iterator for keys
 for (let key of keys) {
     console.log(key); // Will log 'a', 'b', 'c'
-}rray
-let keysArray = [...map.keys()]; // ['a', 'b', 'c']
+}
+let keysArray = [...Map.keys()]; // ['a', 'b', 'c']
 
 
-let values = map.values(); // Iterator for values
+let values = Map.values(); // Iterator for values
 
-map.entries(); // Iterator for [key, value] pairs
+Map.entries(); // Iterator for [key, value] pairs
 
 // forEach method for iteration
-map.forEach((value, key, map) => {
+Map.forEach((value, key, map) => {
     // Function to execute for each entry
 });
 
 // Conversion to arrays
 [...map]; // Convert to array of [key, value] pairs
-[...map.keys()]; // Convert keys to array
-[...map.values()]; // Convert values to array
+[...Map.keys()]; // Convert keys to array
+[...Map.values()]; // Convert values to array
 
 // Direct iteration using for...of
 for (let [key, value] of map) {
@@ -34,7 +33,7 @@ for (let [key, value] of map) {
 }
 
 // Destructuring in function parameters
-map.forEach(([key, value]) => {
+Map.forEach(([key, value]) => {
     // Function using key and value
 });
 
