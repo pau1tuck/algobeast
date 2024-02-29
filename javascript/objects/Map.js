@@ -35,7 +35,7 @@ let valuesArray = [...Map.values()]; // Convert values to array
 
 /*
 ADVANTAGES OF MAP OBJECT:
-Key Flexibility: Map allows keys of any type, including objects, while plain objects typically have string or symbol keys. This can be super handy when you need to use more complex keys.
+Key Flexibility: Map allows keys of any type, including objects, while plain objects typically have string or symbol keys. This can be when you need to use more complex keys.
 
 Order of Elements: Elements in a Map are ordered by their insertion order, which can be beneficial if you need to maintain the sequence of your entries. Plain objects don't guarantee property order, especially with numeric keys.
 
