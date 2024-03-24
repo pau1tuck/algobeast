@@ -1,21 +1,13 @@
-function bubbleSort(arr) {
-	let n = arr.length;
-	let swapped;
-	do {
-		swapped = false;
-		for (let i = 1; i < n; i++) {
-			if (arr[i - 1] > arr[i]) {
-				// Swap the elements
-				[arr[i - 1], arr[i]] = [arr[i], arr[i - 1]];
-				swapped = true;
+function bubbleSort(array) {
+	for (let i = 0; i < array.length; i++) {
+		for (let j = 0; j <= i; j++) {
+			if (array[i] < array[j]) {
+				const swap = array[i];
+				array[i] = array[j];
+				array[j] = swap;
 			}
 		}
-		// Each iteration guarantees the largest element bubbles up to the end of the array
-		n--;
-	} while (swapped);
+	}
+	return array;
 }
-/*
-Time (best case): O(n) - This occurs when the array is already sorted, and the algorithm only needs to pass through the array once to verify.
-Time (worst case): O(n^2) e.g. if the array is in reverse, Bubble Sort compares each pair of elements, resulting in quadratic time complexity.
-Space: O(1)
-*/
+// Time Complexity = O(n²);  Space Complexity = O(1)
