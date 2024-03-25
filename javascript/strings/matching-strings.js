@@ -22,3 +22,5 @@ function matchingStrings(strings, queries) {
     });
     return results;
 }
+
+/* KNUTH-MORRIS-PRATT ?? */
