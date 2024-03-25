@@ -1,7 +1,7 @@
 /* Prime Check: Write an algorithm to determine if a given n is a prime n. */
 // input: n: int, output: boolean
 
-export const PrimeCheck = (n) => {
+const PrimeCheck = (n) => {
     if (n <= 1) return false; // Edge case
     if (n === 2) return true; // Edge case
 
