@@ -23,3 +23,12 @@ function isPalindrome2(str) {
 	}
 	return true;
 }
+// Time: O(n), Space: O(1)
+
+
+function isPalindrome(str) {
+    const reversed = str.split("").reverse().join("");
+    return str === reversed;
+}
+// Time: O(n), Space: O(n)
+

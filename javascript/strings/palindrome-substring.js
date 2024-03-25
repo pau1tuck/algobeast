@@ -1,4 +1,4 @@
-function isPalindrome(str) {
+function isPalindrome(str) { // Use optimized version in palindrome.js
     const reversed = str.split("").reverse().join("");
     return str === reversed;
 }
