@@ -21,3 +21,4 @@ function checkPermutation(str1, str2) {
 	}
 	return true;
 }
+// Time: O(n), Space: O(n)

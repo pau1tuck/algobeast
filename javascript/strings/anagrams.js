@@ -1,5 +1,31 @@
 // Check two strings to see if they are anagrams.
 
+function checkAnagrams(str1, str2) {
+	if (str1.length !== str2.length) {
+		return false;
+	}
+	const charCount = {};
+
+	for (const char of str1) {
+		charCount[char] = (charCount[char] || 0) + 1;
+	} // 'd' = 0 + 1
+
+	for (const char of str2) {
+		if (!charCount[char]) {
+			return false;
+		}
+		charCount[char]--; // = Match found, remove 1 char
+	}
+	return true;
+}
+// Time: O(n), Space: O(n)
+
+function removeSpacesAndPunctuation(str) {
+	// Optional
+	return str.replace(/[^\w]/g, ""); // Remove non-word characters
+}
+
+// ---------------------------------
 const makeFrequencyMap = (str) => {
 	const frequencyMap = {};
 
@@ -27,7 +53,4 @@ const areAnagrams = (str1, str2) => {
 	return true;
 };
 
-function removeSpacesAndPunctuation(str) {
-	// Optional
-	return str.replace(/[^\w]/g, ""); // Remove non-word characters
-}
+
