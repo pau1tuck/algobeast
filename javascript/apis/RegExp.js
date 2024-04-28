@@ -1,5 +1,5 @@
 let regex;
-regex = /pattern/modifiers; // Literal notation, e.g. /hello/gi
+// regex = /pattern/modifiers; // Literal notation, e.g. /hello/gi
 regex = new RegExp("pattern", "modifiers"); // Constructor function, e.g. new RegExp("hello", "gi")
 
 "string".match(regex); // Returns an array of matches
