@@ -1,5 +1,5 @@
-const concatenateArrayES6 = (arr) => {
+const concatenateArraysES6 = (arr) => {
 	return [...arr, ...arr];
 };
 
-const concatenateArray = (arr) => {};
+const concatenateArrays = (arr) => {};

@@ -21,6 +21,21 @@ const removeDuplicates = arr => {
     const uniqueArray = Array.from(new Set(arr));
 
     return uniqueArray;
-}
+};
 
-const findDuplicates = (arr) => {}
+const findDuplicates = arr => {
+    const elementCount = {}; // Object to hold the count of each element
+    const duplicates = []; // Array to hold the duplicated elements
+
+    // Iterate over the array and count each element
+    for (const item of arr) {
+        elementCount[item] = (elementCount[item] || 0) + 1;
+    }
+
+    for (const [item, count] of Object.entries(elementCount)) {
+        if (count > 1) {
+            duplicates.push(item);
+        }
+    }
+    return duplicates; // Return the array of duplicates
+};
