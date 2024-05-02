@@ -9,15 +9,5 @@ function countOccurrences(str) {
             occurrences[char] = 1; // Initialize the count if encountering the character for the first time
         }
     }
-
     return occurrences;
 }
-
-// Example input
-const inputString = "hello";
-
-// Count occurrences of characters in the input string
-const charOccurrences = countOccurrences(inputString);
-
-// Output the occurrences
-console.log("Character occurrences:", charOccurrences);
