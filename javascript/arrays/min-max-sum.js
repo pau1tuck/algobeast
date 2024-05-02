@@ -1,4 +1,4 @@
-// Write a JavaScript function that takes an array of integers and returns the minimum and maximum total sums in the format minSum, maxSum.
+// Write a JavaScript function that takes an array of 4 integers and returns the minimum and maximum total sums in the format minSum, maxSum.
 
 
 function minMaxSum(arr) {
