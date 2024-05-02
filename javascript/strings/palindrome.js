@@ -1,5 +1,12 @@
 // Check whether the given string is a palindrome.
 
+
+function isPalindrome3(str) {
+    const reversed = str.split("").reverse().join("");
+    return str === reversed;
+}
+// Time: O(n), Space: O(n)
+
 function isPalindrome(str) {
 	for (let i = 0; i < str.length / 2; i++) {
 		if (str[i] !== str[str.length - 1 - i]) {
@@ -25,10 +32,4 @@ function isPalindrome2(str) {
 }
 // Time: O(n), Space: O(1)
 
-
-function isPalindrome(str) {
-    const reversed = str.split("").reverse().join("");
-    return str === reversed;
-}
-// Time: O(n), Space: O(n)
 
