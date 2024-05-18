@@ -1,4 +1,4 @@
-function diagonalDifference(arr) {
+function diagonalDifference1(arr) {
     let diagonalSum = 0;
     for (let i = 0; i < arr.length; i++) {
         diagonalSum += arr[i][i] - arr[i][arr.length - 1 - i];
@@ -6,7 +6,7 @@ function diagonalDifference(arr) {
     return Math.abs(diagonalSum);
 }
 
-function diagonalDifference(arr) {
+function diagonalDifference2(arr) {
     let len = arr.length; // Init.
     let diag1 = 0;
     let diag2 = 0;
