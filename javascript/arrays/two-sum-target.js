@@ -7,27 +7,27 @@
 Basic and straightforward search technique. Useful for iterating through sorted arrays or linked lists when you want to compare elements or find a pair that meets a specific criterion. */
 
 function findPairWithTargetSum(arr, target) {
-	// Handle edge cases: empty array or invalid target
-	if (!arr || arr.length < 2) return [];
+    // Handle edge cases: empty array or invalid target
+    if (!arr || arr.length < 2) return [];
 
-	// arr.sort((a, b) => a - b); sort??
-	// Initialize pointers
-	let left = 0;
-	let right = arr.length - 1;
+    // arr.sort((a, b) => a - b); sort??
+    // Initialize pointers
+    let left = 0;
+    let right = arr.length - 1;
 
-	while (left < right) {
-		// Iterate using both pointers
-		const sum = arr[left] + arr[right];
-		if (sum === target) {
-			return [left, right];
-		}
-		if (sum < target) {
-			left++; // Move left pointer to the right
-		} else {
-			right--; // Move right pointer to the left
-		}
-	}
-	return [];
+    while (left < right) {
+        // Iterate using both pointers
+        const sum = arr[left] + arr[right];
+        if (sum === target) {
+            return [left, right];
+        }
+        if (sum < target) {
+            left++; // Move left pointer to the right
+        } else {
+            right--; // Move right pointer to the left
+        }
+    }
+    return [];
 }
 
 /* A simple implementation of the Two Sum problem (finding two numbers in an array that add up to a specific target). */
