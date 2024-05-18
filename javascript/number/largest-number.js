@@ -1,7 +1,6 @@
-/* Write a function that takes a list of numbers and returns the largest number in the list.
+/* Write a function that takes an array of numbers and returns the largest number in the list.
 If there are no numbers in the list, return 0. */
-
-function findLargestNumber(numbers) {
+function findLargestNumber1(numbers) {
     if (numbers.length === 0) {
         return 0;
     }
@@ -13,8 +12,12 @@ function findLargestNumber(numbers) {
     }
     return largest;
 }
-/* Given an integer n, return the largest number that contains exactly n digits. */
 
+function findLargestNumber2(numbers) {
+    return Math.max(...numbers); // spreads the numbers into individual arguments
+}
+
+/* Given an integer n, return the largest number that contains exactly n digits. */
 function largestNumber(n) {
     return 10 ** n - 1; // e.g. 1,000 - 1 = 999
 }

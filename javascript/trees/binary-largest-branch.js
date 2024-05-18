@@ -1,5 +1,5 @@
 /* Suppose you're given a binary tree represented as an array.
-For example, [3,6,2,9,-1,10] where-1 is a non-existent node.
+For example, [3,6,2,9,-1,10] where -1 is a non-existent node.
 
 Write a function that determines whether the left or right branch of the tree is larger.
 The size of each branch is the sum of the node values.
@@ -26,11 +26,7 @@ function compareBranches(treeArray) {
             return 0;
         }
 
-        return (
-            treeArray[index] +
-            branchSum(2 * index + 1) +
-            branchSum(2 * index + 2)
-        );
+        return treeArray[index] + branchSum(2 * index + 1) + branchSum(2 * index + 2);
     }
 
     const rootValue = treeArray[0];
