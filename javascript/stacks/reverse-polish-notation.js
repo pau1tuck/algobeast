@@ -1,6 +1,10 @@
 /* Evaluate the value of an arithmetic expression in Reverse Polish Notation (RPN).
 Reverse Polish Notation (RPN) is a mathematical notation in which every operator follows all of its operands.
-It is also known as postfix notation. */
+It is also known as postfix notation.
+Example
+    - Infix Notation: (3 + 4) * 5
+    - Reverse Polish Notation: 3 4 + 5 *
+*/
 
 function rpn(tokens) {
     const stack = [];
