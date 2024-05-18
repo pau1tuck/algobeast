@@ -16,19 +16,12 @@ Approach:
 - Compare the sums and return the appropriate string. */
 
 function compareBranches(treeArray) {
-    if (treeArray.length === 0) {
-        return "";
-    }
-
-    // Helper function to compute sum of nodes in a branch
     function branchSum(index) {
         if (index >= treeArray.length || treeArray[index] === -1) {
             return 0;
         }
-
         return treeArray[index] + branchSum(2 * index + 1) + branchSum(2 * index + 2);
     }
-
     const rootValue = treeArray[0];
     const leftSum = branchSum(1);
     const rightSum = branchSum(2);
@@ -40,4 +33,8 @@ function compareBranches(treeArray) {
     } else {
         return "";
     }
+}
+// ----
+if (treeArray.length === 0) {
+    return "";
 }
