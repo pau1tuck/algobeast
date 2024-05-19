@@ -1,4 +1,4 @@
-/* Instructions: Write a function to find the length of the longest consecutive elements sequence in an array of integers. The elements are not required to be in order within the array.
+/* Instructions: Write a function to find the length of the longest consecutive sequence of elements in an array of integers. The elements are not required to be in order within the array.
 Input: An array of integers, arr.
 Output: An integer representing the length of the longest sequence of consecutive numbers in the array. */
 
@@ -23,7 +23,7 @@ function longestConsecutiveSet(arr) {
         }
     }
     return longestStreak;
-}
+} // Time: O(1), Space: O(n)
 
 function longestConsecutiveMap(arr) {
     const numCount = new Map();

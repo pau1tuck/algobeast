@@ -1,5 +1,7 @@
-const concatenateArraysES6 = (arr) => {
-	return [...arr, ...arr];
+const concatenateArraysES6 = arr => {
+    return [...arr, ...arr];
 };
 
-const concatenateArrays = (arr) => {};
+var concatenateArrays = function (arr1, arr2) {
+    return arr1.concat(arr2);
+};
