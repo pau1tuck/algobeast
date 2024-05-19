@@ -1,13 +1,13 @@
-// Defining a class named 'Node_' that is generic (type parameter T).
-class Node_<T> {
+// Defining a class named 'NodeTS_' that is generic (type parameter T).
+class NodeTS_<T> {
     // This is the value that this node holds. It's of generic type T.
     value: T;
 
     // This is a pointer/reference to the next node in the linked list.
     // Initially, it's null because when we create a node, it doesn't link to any other node.
-    next: Node_<T> | null = null;
+    next: NodeTS_<T> | null = null;
 
-    // Constructor for the Node_ class. This gets called when a new Node_ object is instantiated.
+    // Constructor for the NodeTS_ class. This gets called when a new NodeTS_ object is instantiated.
     constructor(value: T) {
         // Setting the value of this node to the value passed in the constructor.
         this.value = value;
@@ -15,18 +15,18 @@ class Node_<T> {
 }
 
 // Defining a class named 'LinkedList' that is also generic.
-class LinkedList<T> {
+class LinkedListTS<T> {
     // This is the starting node of the linked list.
     // Initially, it's null because when we create a linked list, it's empty.
-    private head: Node_<T> | null = null;
+    private head: NodeTS_<T> | null = null;
 
     // Method to add a new node at the end of the linked list.
     append(value: T): void {
         // Create a new node with the given value.
-        const newNode_ = new Node_(value);
+        const newNodeTS_ = new NodeTS_(value);
         // If the list is empty (head is null), make the new node the head.
         if (!this.head) {
-            this.head = newNode_;
+            this.head = newNodeTS_;
             return;
         }
 
@@ -36,35 +36,35 @@ class LinkedList<T> {
             current = current.next;
         }
         // Set the next property of the last node to the new node, appending it to the list.
-        current.next = newNode_;
+        current.next = newNodeTS_;
     }
 
     // Method to insert a new node at a specific position in the list.
     insertAt(value: T, index: number): void {
-        const newNode_ = new Node_(value);
+        const newNodeTS_ = new NodeTS_(value);
         // If the index is 0, it means we're inserting at the start.
         if (index === 0) {
-            newNode_.next = this.head; // Make the new node point to the current head.
-            this.head = newNode_; // Update the head to be the new node.
+            newNodeTS_.next = this.head; // Make the new node point to the current head.
+            this.head = newNodeTS_; // Update the head to be the new node.
             return;
         }
 
         // If the index isn't 0, find the node right before the desired position.
-        const previous = this.getNode_At(index - 1);
+        const previous = this.getNodeTS_At(index - 1);
         if (!previous) {
             throw new Error('Index out of bounds'); // If there's no node at that position, throw an error.
         }
         // Set the new node's next property to the next node of the previous node.
-        newNode_.next = previous.next;
+        newNodeTS_.next = previous.next;
         // Update the next property of the previous node to be the new node.
-        previous.next = newNode_;
+        previous.next = newNodeTS_;
     }
 
     // Method to get the value of a node at a specific position.
     get(index: number): T | null {
-        const Node_ = this.getNode_At(index);
+        const NodeTS_ = this.getNodeTS_At(index);
         // Return the value if the node exists, otherwise return null.
-        return Node_ ? Node_.value : null;
+        return NodeTS_ ? NodeTS_.value : null;
     }
 
     // Method to remove a node from a specific position in the list.
@@ -79,7 +79,7 @@ class LinkedList<T> {
         }
 
         // If the index isn't 0, find the node right before the desired position.
-        const previous = this.getNode_At(index - 1);
+        const previous = this.getNodeTS_At(index - 1);
         if (!previous || !previous.next) {
             throw new Error('Index out of bounds'); // If there's no node at that position, throw an error.
         }
@@ -88,7 +88,7 @@ class LinkedList<T> {
     }
 
     // Helper method to find and return the node at a specific position.
-    private getNode_At(index: number): Node_<T> | null {
+    private getNodeTS_At(index: number): NodeTS_<T> | null {
         if (index < 0) {
             return null; // If the index is negative, return null.
         }
