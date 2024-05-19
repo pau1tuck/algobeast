@@ -4,9 +4,11 @@ let arr = new Array(4).fill(0); // [0, 0, 0, 0]
 Array.concat(newArray); // returns new array; don't try and `concat()` to a const variable!
 
 for (const element of arr) {
+    // `of` value
     console.log(element); // Output: '0', '0', '0', '0'
 }
 for (const index in arr) {
+    // `in` index
     console.log(index); // Output: '0', '1', '2', '3'
     console.log(arr[index]); // Output: '0', 0', '0', '0'
 }
