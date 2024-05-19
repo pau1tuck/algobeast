@@ -27,7 +27,7 @@ function firstNonRepeatingCharacterQueue(stream) {
     if (queue.length) {
         return queue[0]; // Returns the first non-repeating character
     } else {
-        return '_'; // Returns '_' if no non-repeating character is found
+        return "_"; // Returns '_' if no non-repeating character is found
     }
 }
 
@@ -52,5 +52,5 @@ function firstNonRepeatingCharacterHashmap(s) {
         }
     }
 
-    return '_'; // Return '_' if there's no non-repeating character
+    return "_"; // Return '_' if there's no non-repeating character
 }

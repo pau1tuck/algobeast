@@ -1,25 +1,20 @@
-class NodeTS_<T> {
-    value: T;
-    next: NodeTS_<T> | null;
-
-    constructor(value: T) {
+class Node_ {
+    constructor(value) {
         this.value = value;
         this.next = null;
     }
 }
 
-class LinkedListTS<T> {
-    head: NodeTS_<T> | null;
-
+class LinkedList {
     constructor() {
         this.head = null;
     }
 
     // Append a node at the end
-    append(value: T): void {
-        const newNodeTS_ = new NodeTS_(value);
+    append(value) {
+        const newNode_ = new Node_(value);
         if (!this.head) {
-            this.head = newNodeTS_;
+            this.head = newNode_;
             return;
         }
 
@@ -27,39 +22,39 @@ class LinkedListTS<T> {
         while (current.next) {
             current = current.next;
         }
-        current.next = newNodeTS_;
+        current.next = newNode_;
     }
 
-    insertAtBeginning(value: T): void {
-        const newNode = new NodeTS_(value);
+    insertAtBeginning(value) {
+        const newNode = new Node_(value);
         newNode.next = this.head;
         this.head = newNode;
     }
 
-    insertAt(value: T, index: number): void {
-        const newNodeTS_ = new NodeTS_(value);
+    insertAt(value, index) {
+        const newNode_ = new Node_(value);
         if (index === 0) {
-            newNodeTS_.next = this.head;
-            this.head = newNodeTS_;
+            newNode_.next = this.head;
+            this.head = newNode_;
             return;
         }
 
-        const previous = this.getNodeTS_At(index - 1);
+        const previous = this.getNode_At(index - 1);
         if (!previous) {
             throw new Error("Index out of bounds");
         }
-        newNodeTS_.next = previous.next;
-        previous.next = newNodeTS_;
+        newNode_.next = previous.next;
+        previous.next = newNode_;
     }
 
     // Get the value of a node at a specific index
-    get(index: number): T | null {
-        const node_ = this.getNodeTS_At(index);
+    get(index) {
+        const node_ = this.getNode_At(index);
         return node_ ? node_.value : null;
     }
 
     // Remove a node at a specific index
-    removeAt(index: number): void {
+    removeAt(index) {
         if (index === 0) {
             if (!this.head) {
                 return;
@@ -68,7 +63,7 @@ class LinkedListTS<T> {
             return;
         }
 
-        const previous = this.getNodeTS_At(index - 1);
+        const previous = this.getNode_At(index - 1);
         if (!previous || !previous.next) {
             throw new Error("Index out of bounds");
         }
@@ -77,7 +72,7 @@ class LinkedListTS<T> {
     }
 
     // Remove the first node with the specified value
-    deleteNode(value: T): void {
+    deleteNode(value) {
         if (!this.head) return;
 
         if (this.head.value === value) {
@@ -95,7 +90,7 @@ class LinkedListTS<T> {
         }
     }
 
-    getNodeTS_At(index: number): NodeTS_<T> | null {
+    getNode_At(index) {
         if (index < 0) {
             return null;
         }
@@ -107,9 +102,9 @@ class LinkedListTS<T> {
         return current;
     }
 
-    printList(): void {
+    printList() {
         let current = this.head;
-        let result: T[] = [];
+        let result = [];
         while (current) {
             result.push(current.value);
             current = current.next;
@@ -117,9 +112,8 @@ class LinkedListTS<T> {
         console.log(result.join(" -> "));
     }
 }
-
 // Usage example with edge cases
-const listTS = new LinkedListTS<number>();
+const list = new LinkedList();
 list.append(1);
 list.append(2);
 list.append(3);
