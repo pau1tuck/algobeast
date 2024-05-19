@@ -1,5 +1,5 @@
 /* Instructions: Write a function to find the maximum product of any subset of elements in a given array of integers. Consider only positive numbers for the product calculation.
-Input: An array of integers, arr.
+Input: An array of positive integers, arr.
 Output: An integer representing the maximum product of a subset of positive elements in the array. If no positive number exists, return 1 (assuming an empty subset product). */
 
 // Positive integers only:
