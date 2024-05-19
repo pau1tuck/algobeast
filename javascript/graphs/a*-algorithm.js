@@ -93,3 +93,11 @@ function reconstructPath(cameFrom, current) {
     }
     return path;
 }
+
+/* Explanation:
+PriorityQueue: This class is used to keep the nodes to explore, prioritized by their estimated cost to reach the end.
+Heuristic Function: This uses the Manhattan distance, suitable for grid-based maps where diagonal movement is not allowed, or costs more than straight movement.
+
+A Core Logic:* Manages nodes to explore (open list), tracks the best path to each node (cameFrom), and the cost associated with each path (costSoFar).
+
+The provided code is structured to work with a grid, handling obstacles, and can be tested with different start and end points to see how A* efficiently finds a path, if available. */
