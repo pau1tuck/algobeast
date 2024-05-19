@@ -1,3 +1,7 @@
+/* HashMap FIFO: Write a JavaScript function called firstNonRepeatingCharacter that takes a string and returns the first non-repeating character in the string.
+If there is no non-repeating character, return '_'.
+Consider the string as a stream of characters, where you need to find the first unique character at each point. */
+
 function firstNonRepeatingCharacter(s) {
     let counts = {}; // To store the count of each character
     let order = []; // To keep track of the order of characters
@@ -19,5 +23,5 @@ function firstNonRepeatingCharacter(s) {
         }
     }
 
-    return '_'; // Return '_' if there's no non-repeating character
+    return "_"; // Return '_' if there's no non-repeating character
 }

@@ -1,5 +1,4 @@
 /* Task: Merge two sorted linked lists into one sorted linked list.
-
 Challenge: Implement an algorithm to merge two sorted linked lists into one sorted list while maintaining the order. */
 
 function mergeTwoLists(l1, l2) {
