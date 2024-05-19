@@ -10,6 +10,7 @@ class LinkedList {
         this.head = null;
     }
 
+    // Append a node at the end
     append(value) {
         const newNode_ = new Node_(value);
         if (!this.head) {
@@ -46,11 +47,13 @@ class LinkedList {
         previous.next = newNode_;
     }
 
+    // Get the value of a node at a specific index
     get(index) {
         const node_ = this.getNode_At(index);
         return node_ ? node_.value : null;
     }
 
+    // Remove a node at a specific index
     removeAt(index) {
         if (index === 0) {
             if (!this.head) {
@@ -67,6 +70,8 @@ class LinkedList {
 
         previous.next = previous.next.next;
     }
+
+    // Remove the first node with the specified value
     deleteNode(value) {
         if (!this.head) return;
 
@@ -96,34 +101,35 @@ class LinkedList {
         }
         return current;
     }
-}
-// All Time Complexities: O(n)
 
+    printList() {
+        let current = this.head;
+        let result = [];
+        while (current) {
+            result.push(current.value);
+            current = current.next;
+        }
+        console.log(result.join(" -> "));
+    }
+}
 // Usage example with edge cases
 const list = new LinkedList();
-
-// Appending nodes
-list.append(1); // Edge case: Empty list
-list.append(2); // Single node
+list.append(1);
+list.append(2);
 list.append(3);
+list.printList(); // Output: 1 -> 2 -> 3
 
-// Inserting nodes
-list.insertAt(0, 0); // Edge case: Inserting at the beginning
-list.insertAt(4, 4); // Edge case: Inserting at the end
-try {
-    list.insertAt(5, 10); // Edge case: Out of bounds
-} catch (e) {
-    console.error(e.message);
-}
+list.insertAt(4, 1);
+list.printList(); // Output: 1 -> 4 -> 2 -> 3
 
-// Removing nodes
-list.removeAt(0); // Edge case: Removing from the beginning
-try {
-    list.removeAt(10); // Edge case: Out of bounds
-} catch (e) {
-    console.error(e.message);
-}
+list.removeAt(2);
+list.printList(); // Output: 1 -> 4 -> 3
 
-// Getting values
-console.log(list.get(1)); // Should print 2
-console.log(list.get(5)); // Edge case: Out of bounds, should print null
+list.deleteNode(1);
+list.printList(); // Output: 4 -> 3
+
+list.insertAtBeginning(0);
+list.printList(); // Output: 0 -> 4 -> 3
+
+console.log(list.get(1)); // Output: 4
+console.log(list.get(3)); // Output: null (out of bounds)
