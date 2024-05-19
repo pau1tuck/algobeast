@@ -2,6 +2,9 @@ Arrays
     common-elements: Find common elements in two arrays
     concatenate: Concatenate two arrays
     duplicates: removeDuplicates; hasDuplicates; findDuplicates
+    first-non-repeating-int: Write a function to find the first non-repeating number in a given array of integers.
+    kth-order:
+    longest-consecutive: Write a function to find the length of the longest consecutive elements sequence in an array of integers. The elements are not required to be in order within the array.
 
 Linked Lists
 
