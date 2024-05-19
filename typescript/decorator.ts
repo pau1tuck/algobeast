@@ -27,7 +27,6 @@ function IsPalindrome(
     // Return the new descriptor (with our new method implementation)
     return descriptor;
 }
-
 class PalindromeChecker {
     // Apply the decorator to the check method
     @IsPalindrome

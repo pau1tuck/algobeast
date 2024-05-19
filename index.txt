@@ -1,6 +1,7 @@
 Arrays
     common-elements: Find common elements in two arrays
     concatenate: Concatenate two arrays
+    duplicates: removeDuplicates; hasDuplicates; findDuplicates
 
 Linked Lists
 
