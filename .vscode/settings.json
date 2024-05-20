@@ -1,0 +1,15 @@
+{
+    "editor.formatOnSave": false,
+    "editor.formatOnType": false,
+    "editor.formatOnPaste": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "never",
+        "source.organizeImports": "never"
+    },
+    "eslint.enable": false,
+    "stylelint.enable": false,
+    "typescript.suggest.enabled": false,
+    "typescript.validate.enable": false,
+    "javascript.suggest.enabled": false,
+    "javascript.validate.enable": false
+}
