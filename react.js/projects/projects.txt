@@ -1,0 +1,88 @@
+CRUD, Authentication, Search, Rating/Upvotes, Sorting, Filtering, Pagination, Socket.io, (JEST/RTL TESTING!)
+
+- CRUD ToDo List / Task Tracker, Blog, Expense Tracker
+- Shop with Cart, Form Validator, Sorting, Filtering
+- Recipe, Google Books API, IMDB, REST Countries API SEARCH + Ratings, - News App with News API
+- Chat Messenger
+- Twitter with status, retweets and likes
+- Custom hooks
+- Temperature, Currency Converter
+- Photo Gallery
+- Calendar
+- Calculator
+- Stopwatch
+- Music Player
+- Markdown Previewer
+
+
+
+
+To-do List: Build a to-do list app where users can add, delete, and mark tasks as completed.
+
+Temperature Converter: Build an application that converts temperatures between Fahrenheit and Celsius.
+
+Recipe Search: Using a public API, build a recipe search application.
+
+Shopping Cart: Create a simple e-commerce application with a shopping cart functionality.
+
+Stopwatch: Build a stopwatch application with start, stop, and reset functionality.
+
+Weather App: Build a weather application using a public API that shows the weather based on user's location.
+
+Note Taking App: Create a note-taking application that allows users to write, edit, delete, and save notes.
+
+Photo Gallery: Create a photo gallery using a public API. Users should be able to select a photo to view it in detail.
+
+Chat Application: Build a basic chat application where users can send and receive messages in real time.
+
+Country Finder: Build an app which uses the REST Countries API to display information about different countries.
+
+Calculator: Create a simple calculator application.
+
+News App: Build a news application using a news API that shows the latest news.
+
+Mini Social Media: Develop a mini social media application with basic features like posting status updates and liking posts.
+
+Task Tracker: Create a task tracking application where users can add tasks with a deadline and priority level.
+
+Quiz App: Develop a quiz application where users answer questions and get a score at the end.
+
+Markdown Previewer: Develop a markdown previewer that renders markdown input as styled text.
+
+Currency Converter: Build a currency converter application using a currency API.
+
+Simple Blog: Create a simple blog application where users can read and write blog posts.
+
+Portfolio: Develop a portfolio page showcasing projects and experience.
+
+Music Player: Create a simple music player that plays a list of songs.
+
+Tic Tac Toe: Build a tic-tac-toe game with a score tracker.
+
+Expense Tracker: Develop an expense tracking application where users can input their expenses and view them categorized.
+
+Meme Generator: Build a meme generator application where users can create memes by adding text to images.
+
+Calendar Application: A simple calendar application where users can add and remove events, navigate between months, etc.
+
+Personal Dashboard: A dashboard showing personalized data like to-do list, weather, and news. This project could incorporate several other smaller projects.
+
+Form Validation: An application focusing on complex form validation, useful for understanding the nuances of user input validation.
+
+Product Review Ratings: A product listing page with the ability to add star ratings and reviews.
+
+Sorting and Filtering: A list display (like an e-commerce product listing) that can be sorted and filtered based on various parameters.
+
+Authentication: Incorporate user registration and login into one of the project ideas. This will help you understand handling sensitive user data and maintaining user sessions.
+
+Hooks and Custom Hooks: Implementing a project that makes heavy use of React hooks, including creating custom hooks.
+
+Animations: A project focusing on animations, transitions, and handling user interaction visually.
+
+Real-time updates: An application like a stock price tracker or sports score tracker that pulls in real-time data and updates the UI accordingly.
+
+REDUX
+
+REACT ROUTER
+
+JEST/RTL
