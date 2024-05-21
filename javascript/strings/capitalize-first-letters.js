@@ -6,6 +6,7 @@ function capitalizeWordsCharAt(s) {
     return s.split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
 }// Time: O(n), Space: O(n)
 
+// =====================================
 function capitalizeWordsRegex(s) {
     return s.replace(/\b\w/g, char => char.toUpperCase());
 } // Time: O(n), Space: O(n)

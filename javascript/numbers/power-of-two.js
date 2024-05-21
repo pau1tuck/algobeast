@@ -17,7 +17,7 @@ function isPowerOfTwo(n) {
     }
     return true;
 } // Time: O(log n), Space: O(1)
-// ==========================
+// =============================
 function isPowerOfTwo(n) {
     return n > 0 && (n & (n - 1)) === 0;
 } // Time: O(1), Space: O(1)
