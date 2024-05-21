@@ -28,7 +28,6 @@ function calculateStatistics(numbers) {
         }
     });
     modes = [...new Set(modes)]; // Ensure modes are unique
-
     return { mean, median, mode: modes };
 }
 // Example usage

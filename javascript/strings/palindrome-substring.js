@@ -35,13 +35,10 @@ function findLongestPalindromeSubstring(sentence) {
             }
         }
     }
-
     return longestPalindrome;
 }
 // Example input
 const inputSentence = "A man, a plan, a canal, Panama!";
-const longestPalindrome =
-    findLongestPalindromeSubstring(inputSentence);
-
+const longestPalindrome = findLongestPalindromeSubstring(inputSentence);
 // Output the result
 console.log("Longest palindrome substring:", longestPalindrome);
