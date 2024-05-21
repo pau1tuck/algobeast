@@ -2,7 +2,7 @@
 
 function firstNonRepeatingCharacterHashmap(s) {
     let counts = {}; // To store the count of each character
-    let order = []; // To keep track of the order of characters
+    let order = []; // A stack to keep track of the order of characters
 
     // Iterate through the string to populate counts and order
     for (let char of s) {
@@ -13,13 +13,11 @@ function firstNonRepeatingCharacterHashmap(s) {
             counts[char]++; // Increment the count if the character is repeating
         }
     }
-
     // Find the first non-repeating character by checking the order list
     for (let char of order) {
         if (counts[char] === 1) {
             return char; // Return the first non-repeating character
         }
     }
-
     return "_"; // Return '_' if there's no non-repeating character
 }

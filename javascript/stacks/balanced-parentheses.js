@@ -1,15 +1,12 @@
 /* Description: Given a string containing just the characters '(', ')', '{', '}', '[', and ']', determine if the input string is valid. */
-
 function isBalanced(s) {
     const stack = [];
-
     // Object to map closing brackets to their corresponding opening brackets
     const bracketMap = {
         ")": "(",
         "}": "{",
         "]": "[",
     };
-
     for (const char of s) {
         // If the character is an opening bracket, push it onto the stack
         if (Object.values(bracketMap).includes(char)) {
