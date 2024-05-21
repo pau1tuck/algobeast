@@ -1,5 +1,3 @@
-/* */
-
 function matchingStrings(strings, queries) {
     const map = {};
     const results = [];
