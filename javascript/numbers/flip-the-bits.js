@@ -13,6 +13,7 @@ function flipBits(n) {
     }
     return flipped >>> 0;  // Ensure the result is treated as an unsigned 32-bit integer
 } // Time: O(32), Space: O(1)
+
 // ========================================
 function flipBits(n) {
     // A 32-bit unsigned integer has a maximum value of 2^32 - 1, which in binary is a series of 32 '1's.
@@ -22,3 +23,18 @@ function flipBits(n) {
 // Example usage
 console.log(flipBits(0));       // Outputs 4294967295
 console.log(flipBits(4294967295)); // Outputs 0
+
+
+// ~n: This is the bitwise NOT operator in JavaScript. What it does is flip every bit of the number n.
+// For example, if n is represented in binary as 00000000000000000000000000000010 (which is 2 in decimal),
+// then ~n will be 11111111111111111111111111111101.
+// This operation flips all 0s to 1s and all 1s to 0s.
+
+// >>> 0: This is the unsigned right shift operator. It shifts the bits of its left operand (the result of ~n)
+// zero places to the right. While shifting zero places might seem pointless, the key effect of this operation
+// in JavaScript is that it forces the result to be interpreted as an unsigned 32-bit integer.
+// Without this, the result of ~n could be interpreted as a signed integer, leading to potentially negative values.
+
+// For example, ~2 results in -3 when interpreted as a signed 32-bit integer because the most significant bit
+// (the leftmost one) is treated as the sign bit. By applying >>> 0, JavaScript is forced to interpret the result
+// as an unsigned integer, thereby eliminating any sign concerns and ensuring the number is within the range of 0 to 2^32 - 1.

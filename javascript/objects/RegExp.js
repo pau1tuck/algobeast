@@ -8,6 +8,7 @@ regex = new RegExp("pattern", "modifiers"); // Constructor function, e.g. new Re
 "string".split(regex); // Splits the string at matches
 regex.test("string"); // Returns true if the string contains a match
 
+const uniqueChars = new Set(lowerCaseStr.match(/[a-z]/g));
 // Common regex patterns
 /\d/; // Matches any digit, equivalent to [0-9]
 /\D/; // Matches any non-digit character
