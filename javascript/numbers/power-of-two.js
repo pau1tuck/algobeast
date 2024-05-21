@@ -6,8 +6,21 @@ Input: A non-negative integer, num.
 Output: A boolean indicating whether or not num is a power of two. */
 
 function isPowerOfTwo(n) {
+    if (n < 1) {
+        return false;
+    }
+    while (n > 1) {
+        if (n % 2 !== 0) {
+            return false;
+        }
+        n /= 2;
+    }
+    return true;
+} // Time: O(log n), Space: O(1)
+// ==========================
+function isPowerOfTwo(n) {
     return n > 0 && (n & (n - 1)) === 0;
-}
+} // Time: O(1), Space: O(1)
 // Example usage
 console.log(isPowerOfTwo(16)); // Outputs true
 console.log(isPowerOfTwo(18)); // Outputs false
