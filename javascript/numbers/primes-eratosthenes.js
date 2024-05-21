@@ -16,13 +16,10 @@ function sieveOfEratosthenes(n) {
             }
         }
     }
-
     // Filter out the prime numbers and return them
     return primes.reduce((acc, isPrime, index) => {
         if (isPrime) acc.push(index);
         return acc;
     }, []);
 }
-
-// Example usage
 console.log(sieveOfEratosthenes(30)); // This will print all prime numbers up to 30
