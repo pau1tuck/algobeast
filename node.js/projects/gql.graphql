@@ -1,0 +1,46 @@
+type Blog {
+  id: ID!
+  title: String!
+  content: String!
+  author: User!
+}
+
+input BlogInput {
+  title: String!
+  content: String!
+  userId: ID!
+}
+
+extend type Query {
+  blogs: [Blog]!
+  blog(id: ID!): Blog!
+}
+
+extend type Mutation {
+  createBlog(input: BlogInput!): Blog!
+  updateBlog(id: ID!, input: BlogInput!): Blog!
+  deleteBlog(id: ID!): Boolean!
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  posts: [Blog]!
+}
+
+input UserInput {
+  name: String!
+  email: String!
+}
+
+extend type Query {
+  users: [User]!
+  user(id: ID!): User!
+}
+
+extend type Mutation {
+  createUser(input: UserInput!): User!
+  updateUser(id: ID!, input: UserInput!): User!
+  deleteUser(id: ID!): Boolean!
+}

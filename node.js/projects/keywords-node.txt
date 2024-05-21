@@ -1,0 +1,17 @@
+JS runtime environment          server-side operations
+single-threaded                 event-driven architecture
+event loop                      callbacks, asynchronous tasks
+non-blocking I/O capabilities
+handle concurrent tasks         Google V8 JS engine
+high throughput                 simultaneous connections
+event loop: timers, polls
+
+JS everywhere                   NPM ecosystem
+modularity                      promises, async-await
+community
+scalability                     performance
+real-time applications          microservices
+
+clustering                      multiple child processes
+multicore processors            load balancing
+dependencies                    peer dependencies

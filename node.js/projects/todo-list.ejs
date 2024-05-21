@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List</title>
+</head>
+<body>
+    <h1>Todo List</h1>
+
+    <form action="/api/todos" method="POST">
+        <input type="text" name="title" placeholder="Title" required>
+        <input type="text" name="description" placeholder="Description" required>
+        <button type="submit">Add Todo</button>
+    </form>
+
+    <ul>
+        <% todos.forEach(function(todo) { %>
+            <li>
+                <strong>Title:</strong> <%= todo.title %><br>
+                <strong>Description:</strong> <%= todo.description %><br>
+                <strong>Status:</strong> <%= todo.completed ? 'Completed' : 'Pending' %><br>
+                <form action="/api/todos/<%= todo.id %>/complete" method="POST">
+                    <button type="submit">Mark as Completed</button>
+                </form>
+                <form action="/api/todos/<%= todo.id %>/delete" method="POST">
+                    <button type="submit">Delete Todo</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>

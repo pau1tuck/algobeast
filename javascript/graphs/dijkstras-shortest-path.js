@@ -7,7 +7,6 @@ class PriorityQueue {
     constructor() {
         this.queue = [];
     }
-
     enqueue(element, priority) {
         let added = false;
         for (let i = 0; i < this.queue.length; i++) {
@@ -22,11 +21,9 @@ class PriorityQueue {
             this.queue.push({ element, priority });
         }
     }
-
     dequeue() {
         return this.queue.shift();
     }
-
     isEmpty() {
         return this.queue.length === 0;
     }
@@ -53,7 +50,6 @@ function dijkstra(graph, src) {
             }
         }
     }
-
     return distances;
 }
 // Time Complexity: O((V+E) * log V) - With priority queue, every vertex and edge is processed

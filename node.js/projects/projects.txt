@@ -1,0 +1,57 @@
+FULL STACK:
+
+TSK FEATURES:
+- PG CRUD createNote, updateNote, markComplete, deleteNote; creation, complete and deadline date records
+- Live, Active, Inbox, Archive, Complete
+- Search feature
+- Postgres database connection promise
+- Goals and landmarks
+- Cors middleware
+- Passport Authentication: register, login, logout, updateUser, deleteUser
+- Date display
+- Calendar feature
+- JWT authentication with express-session and passport-local
+- Passport Social Authentication
+- Authorization middleware for restricted APIs
+- Cache open notes and weather data using Redis
+- Note attachment file upload
+- Write to a logging file using Events module and singleton Event, Error classes
+- Fetch weather data sing Axios promises
+- Currency converter (and everything converter) using synchronous promises
+- Write the latest currency data to a file
+- Current task state management
+- Data validation
+
+
+TASK MANAGER CRUD API: Develop a task manager where users can create tasks, set deadlines, and mark tasks as complete. Users should be able to view their tasks in a calendar view.
+
+E-COMMERCE ONLINE STORE: Develop a simple e-commerce store where users can view products, add them to a cart, and simulate a checkout process. This project involves creating a backend system for an e-commerce application, including product listing, shopping cart management, and order processing.
+
+FACEBOOK MESSENGER live chat [WEBSOCKETS, SUBSCRIBERS]: Create a real-time chat application where users can send and receive messages instantly. Implement different chat rooms for different topics.
+
+IMDB [SEARCH, CRUD]: Develop an application that fetches movie data from a third-party API. Users should be able to search for movies, view movie details, and save their favorite movies.
+
+TWITTER REALTIME: Develop a dashboard that fetches data from various social media APIs. Users should be able to view their latest posts and key metrics from different platforms in one place. This project involves creating a backend system for a simple social media application, including features like posts, likes, and comments.
+
+DROPBOX CLOUD STORAGE: Imagine this, you build a system that uses the 'http' module for managing requests, the 'fs' module for handling file storage, and the 'crypto' module for securing the data.
+
+- You'd use the 'http' module to create a server and define endpoints for uploading, downloading, and deleting files. You could even build a simple front-end to interact with these APIs, showing off your full stack capabilities.
+
+- The 'fs' module could then be used to save uploaded files to disk, retrieve them for downloads, and remove them when needed. It's fucking crucial to demonstrate that you understand how to work with files in Node.js, as it's such a common requirement.
+
+- The 'crypto' module, now that's the tricky wanker, it's important to make sure that the data is stored securely. Encrypt files before saving them and then decrypt them when they're retrieved. Show that you give a shit about security, that's always a win with employers.
+
+- And here's the cherry on top: Make sure you demonstrate good error handling and logging practices throughout. This will showcase that you understand the importance of maintainability and observability in your applications.
+
+
+-----
+
+User Authentication System
+
+File Upload Service: This project involves creating a service that allows users to upload, download, and delete files. This tests your knowledge of file handling in Node.js.
+
+Weather Application
+
+Data Scraping Service: This project involves creating a service that fetches data from a website and returns it in a structured format.
+
+URL Shortener Service: This project involves creating a service that takes a long URL and returns a shortened version of it.
