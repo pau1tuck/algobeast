@@ -18,16 +18,12 @@ function binarySearch(arr, target) {
 	}
 	return -1; // Target not found
 }
-
 // Example sorted array
 const sortedArray = [1, 3, 5, 7, 9, 11, 13, 15];
-
 // Example search target
 const target = 7;
-
 // Perform binary search
 const index = binarySearch(sortedArray, target);
-
 // Output the result
 if (index !== -1) {
 	console.log(`Target ${target} found at index ${index}.`);
