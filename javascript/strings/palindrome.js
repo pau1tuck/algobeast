@@ -7,17 +7,7 @@ function isPalindrome3(str) {
 }
 // Time: O(n), Space: O(n)
 
-function isPalindrome(str) {
-	for (let i = 0; i < str.length / 2; i++) {
-		if (str[i] !== str[str.length - 1 - i]) {
-			return false;
-		}
-	}
-	return true;
-}
-// Time: O(n), Space: O(1)
-
-function isPalindrome2(str) {
+function isPalindrome2(str) { // Two Pointer Technique
 	let left = 0;
 	let right = str.length - 1;
 
@@ -27,6 +17,16 @@ function isPalindrome2(str) {
 		}
 		left++;
 		right--;
+	}
+	return true;
+}
+// Time: O(n), Space: O(1)
+
+function isPalindrome(str) {
+	for (let i = 0; i < str.length / 2; i++) {
+		if (str[i] !== str[str.length - 1 - i]) {
+			return false;
+		}
 	}
 	return true;
 }

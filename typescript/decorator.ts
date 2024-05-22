@@ -23,7 +23,6 @@ function IsPalindrome(
             return `${inputString} is not a palindrome.`;
         }
     };
-
     // Return the new descriptor (with our new method implementation)
     return descriptor;
 }

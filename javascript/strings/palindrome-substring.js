@@ -2,7 +2,6 @@ function isPalindrome(str) { // Use optimized version in palindrome.js
     const reversed = str.split("").reverse().join("");
     return str === reversed;
 }
-
 // Check if a given string is a palindrome
 function isPalindromeSubString(str) {
     // Remove non-alphanumeric characters and convert to lowercase
