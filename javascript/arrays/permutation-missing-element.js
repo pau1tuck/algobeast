@@ -1,10 +1,12 @@
-/* Instructions: An array `arr` consisting of N different integers is given. The array contains integers in the range [1..(N + 1)], which means that exactly one element is missing.
-Your goal is to find that missing element. Write a function: `function permMissingElement(arr);`
+/* Instructions: An array `arr` consisting of N different integers is given.
+The array contains integers in the range [1..(N + 1)], which means that exactly one element is missing.
+Your goal is to find that missing element.
+Write a function: `function permMissingElement(arr);`
 that, given an array `arr`, returns the value of the missing element. */
 
 function permMissingElement(arr) {
     const N = arr.length + 1;
-    const totalSum = (N * (N + 1)) / 2;
+    const totalSum = (N * (N + 1)) / 2; // `totalSum` calculates the sum of numbers from 1 to 𝑁 (where 𝑁 is length of `arr + 1`).
     let arraySum = 0;
 
     for (let i = 0; i < arr.length; i++) {

@@ -17,12 +17,12 @@ function permCheck(A) {
     const elements = new Set(A);
     // Check if size of set matches the array length and every element from 1 to n is present
     if (elements.size !== n) {
-        return 0; // Immediate return if there are duplicates or different count of elements
+        return false; // Immediate return if there are duplicates or different count of elements
     }
     for (let i = 1; i <= n; i++) {
         if (!elements.has(i)) {
-            return 0; // Return 0 if any required element is missing
+            return false; // Return 0 if any required element is missing
         }
     }
-    return 1; // The array is a valid permutation
+    return true; // The array is a valid permutation
 } // Time: O(n), where n is the number of elements in array A; Space: O(n), to hold the set of elements.
