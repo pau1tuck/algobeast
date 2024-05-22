@@ -17,9 +17,7 @@ const maxPositiveProductPair = arr => {
     }
     return highestInt * nextHighestInt;
 };
-
 // -----------------------------------------------
-
 // The best solution is to use a greedy approach where we track the highest and next-highest integers at each point in the array.
 // This has a time complexity of O(n) since we only walk through the array once. */
 
@@ -46,7 +44,6 @@ const maxProductPair = arr => {
             nextLowestInt = arr[i];
         }
     }
-
     // Compare product of 2 largest numbers with product of 2 smallest numbers.
     return Math.max(highestInt * nextHighestInt, lowestInt * nextLowestInt);
 };
