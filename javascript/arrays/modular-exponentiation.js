@@ -17,6 +17,4 @@ function modularExponentiation(base, exponent, modulus) {
     }
     return result;
 }
-
-// Time Complexity: O(log exponent).Each step effectively halves the exponent.
-// Space Complexity: O(1) uses a fixed amount of space.
+// Time: O(log exponent), as each step effectively halves the exponent; Space: O(1) uses a fixed amount of space.
