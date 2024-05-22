@@ -16,7 +16,6 @@ export const useWindowWidth = (): number => {
             window.removeEventListener("resize", handleResize);
         };
     }, []); // Empty dependency array means this useEffect runs once when the component mounts, and the return function runs when it unmounts
-
     return windowWidth;
 };
 

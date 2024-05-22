@@ -10,15 +10,15 @@ notSure = false; // okay, definitely a boolean
 notSure.toFixed(); // No compile-time error, but will runtime error if notSure is not a number
 notSure.split(','); // No compile-time error, works fine if notSure is a string
 
-/* The unknown type represents any value but is safer than any because it doesn't allow you to perform arbitrary operations on values of this type without an explicit type assertion or type checking. It's a type-safe counterpart of any. When you use unknown, you need to perform some form of checking before performing most operations on values of this type, which helps catch errors during development.*/
+/* The `unknown` type represents any value but is safer than `any` because it doesn't allow you to perform arbitrary operations on values of this type without an explicit type assertion or type checking. It's a type-safe counterpart of any. When you use `unknown`, you need to perform some form of checking before performing most operations on values of this type, which helps catch errors during development.*/
 
 let uncertain: unknown = 30;
 uncertain = "could be a string";
 uncertain = true; // still ok, can be any type
 
 // Compile-time checks prevent operations on 'unknown' variables without narrowing the type
-if (typeof uncertain === 'string') {
-    console.log(uncertain.split(',')); // Okay, we know this is a string now
+if (typeof uncertain === "string") {
+    console.log(uncertain.split(",")); // Okay, we know this is a string now
 }
 // This will raise a TypeScript error:
 // uncertain.toFixed(); // Object is of type 'unknown'.
