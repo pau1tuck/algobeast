@@ -1,9 +1,6 @@
 /* Linked List Cycle Detection involves determining whether a linked list contains a cycle, where a node points back to a previous node in the list. Here's how you can approach it:
-
 1. Floyd's Tortoise and Hare Algorithm: Use two pointers, one moving slower (tortoise) and the other moving faster (hare).
-
 2. Detect Cycle: If there's a cycle, the faster pointer will eventually catch up to the slower pointer.
-
 3. Find Starting Node: After detecting a cycle, reset one of the pointers to the head of the list and move both pointers one step at a time until they meet again. The meeting point is the starting node of the cycle. */
 
 class ListNode {
@@ -12,11 +9,9 @@ class ListNode {
         this.next = null;
     }
 }
-
 function detectCycle(head) {
     let tortoise = head;
     let hare = head;
-
     // Move tortoise one step and hare two steps
     while (hare && hare.next) {
         tortoise = tortoise.next;
@@ -26,22 +21,17 @@ function detectCycle(head) {
             break; // Cycle detected
         }
     }
-
     if (!hare || !hare.next) {
         return null; // No cycle
     }
-
     tortoise = head;
-
     // Move both pointers one step until they meet again
     while (tortoise !== hare) {
         tortoise = tortoise.next;
         hare = hare.next;
     }
-
     return tortoise; // Starting node of the cycle
 }
-
 /* ------------------------------------------ */
 // Example linked list with a cycle
 const node1 = new ListNode(1);
