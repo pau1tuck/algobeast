@@ -20,8 +20,4 @@ function permuteArrays(k, A, B) {
     }
     return "YES";
 } // Time: 𝑂(𝑛 log 𝑛), Space: O(1)
-// Example usage
-const A = [0, 1];
-const B = [0, 2];
-const k = 1;
-console.log(permuteArrays(k, A, B));  // Outputs: YES
+

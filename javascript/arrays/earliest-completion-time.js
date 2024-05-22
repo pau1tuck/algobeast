@@ -24,7 +24,7 @@ function frogRiverOne(X, arr) {
 
 /* Explanation:
 - positions is a Set used to track unique leaf positions that have fallen. It ensures no duplicates and easy checking of whether all required positions have leaves.
-- Loop through the array arr, and for each leaf falling (represented by elements in arr), check if it falls in the range from 1 to X.
+- Loop through the array `arr`, and for each leaf falling (represented by elements in `arr`), check if it falls in the range from 1 to X.
 - Add each valid leaf's position to the positions set.
-- When the size of positions equals X (meaning all positions from 1 to X are covered), return the current index i, which represents the earliest time all positions are covered.
+- When the size of positions equals `X` (meaning all positions from 1 to X are covered), return the current index `i`, which represents the earliest time all positions are covered.
 - If the loop finishes without covering all positions, return -1. */
