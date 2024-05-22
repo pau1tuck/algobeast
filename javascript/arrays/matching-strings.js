@@ -3,7 +3,6 @@
 function matchingStrings(strings, queries) {
     const map = {};
     const results = [];
-
     for (const string of strings) {
         if (string in map) {
             map[string]++;
@@ -20,4 +19,3 @@ function matchingStrings(strings, queries) {
     }
     return results;
 }
-/* KNUTH-MORRIS-PRATT ?? */

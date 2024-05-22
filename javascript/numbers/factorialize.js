@@ -8,13 +8,8 @@ const factorialize = (n) => {
     }
     return factorial;
 }; // O(n) time, O(1) space/memory
-
 // -----------------------------------------
-// -----------------------------------------
-
 const factorializeRecursion = (n) => {
-    // recursion
-
     if (n < 0) return -1;
     else if (n === 0) return 1;
     else {

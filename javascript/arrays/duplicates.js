@@ -1,5 +1,4 @@
 // Instructions: Given an array `arr` of integers, remove duplicates and return a new array.
-
 const removeDuplicates = arr => {
     // Remove duplicates by converting the array to a Set, then back to an array:
     const uniqueArray = Array.from(new Set(arr));
