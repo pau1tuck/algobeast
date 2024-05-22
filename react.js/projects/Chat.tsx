@@ -33,7 +33,6 @@ export const Chat: React.FC<ChatProps> = ({ username }) => {
             setMessage("");
         }
     };
-
     return (
         <div>
             <div>

@@ -6,7 +6,6 @@ import axios from "axios";
 const api = axios.create({
     baseURL: "http://localhost:5000/api",
 });
-
 // Login.tsx
 const Login: React.FC = () => {
     const [username, setUsername] = useState("");
@@ -44,9 +43,7 @@ const Login: React.FC = () => {
         </div>
     );
 };
-
 // withAuth.tsx
-
 const withAuth = <P extends object>(
     WrappedComponent: ComponentType<P>,
 ) => {
@@ -92,10 +89,8 @@ const withAuth = <P extends object>(
         return <WrappedComponent {...props} />;
     };
 };
-
 /*** Protected Component ***/
 const SomeProtectedComponent: React.FC = () => {
     return <div>This is a protected component</div>;
 };
-
 export default withAuth(SomeProtectedComponent);

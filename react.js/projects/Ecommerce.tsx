@@ -19,10 +19,8 @@ interface Product {
     description: string;
     price: number;
 }
-
 /*** FETCH_PRODUCTS.ts */
 /* ----------------------------------------------------------------- */
-
 // Fetches products from the API and returns the list.
 export const fetchProducts = async () => {
     try {
@@ -38,10 +36,8 @@ export const fetchProducts = async () => {
         throw new Error(`Error fetching products: ${error}`);
     }
 };
-
 /*** PRODUCT_LIST.tsx */
 /* ----------------------------------------------------------------- */
-
 export const ProductList: React.FC = () => {
     // State to hold the complete list of products
     const [products, setProducts] = useState<Product[]>([]);
@@ -50,7 +46,6 @@ export const ProductList: React.FC = () => {
     const [filteredProducts, setFilteredProducts] = useState<
         Product[]
     >([]);
-
     // Access the shopping cart state and actions from the global context
     const { state: shopState, addToCart } = useShop();
 
@@ -63,7 +58,6 @@ export const ProductList: React.FC = () => {
 
         getProducts();
     }, []);
-
     // Whenever the products list updates, set it as the filtered list (default view)
     useEffect(() => {
         setFilteredProducts(products);
@@ -80,7 +74,6 @@ export const ProductList: React.FC = () => {
             ),
         );
     };
-
     // Handle the sorting of products based on the selected criteria
     const handleSort = (sortType: string) => {
         let sortedProducts = [...filteredProducts]; // Create a shallow copy for sorting
@@ -106,7 +99,6 @@ export const ProductList: React.FC = () => {
         }
         setFilteredProducts(sortedProducts); // Update the filtered list with sorted products
     };
-
     // Render the product list UI
     return (
         <div>
@@ -141,11 +133,9 @@ export const ProductList: React.FC = () => {
 
 /*** SHOPPING_CART.tsx */
 /* ----------------------------------------------------------------- */
-
 export const ShoppingCart: React.FC = () => {
     // Access the shopping cart state and actions from the global context
     const { state: shopState, removeFromCart } = useShop();
-
     return (
         <div>
             <h2>Your Cart</h2>
@@ -168,7 +158,6 @@ export const ShoppingCart: React.FC = () => {
                     </li>
                 ))}
             </ul>
-
             {/* Calculate and display the total cost of items in the cart */}
             <div>
                 Total: $
@@ -187,7 +176,6 @@ export const ShoppingCart: React.FC = () => {
         </div>
     );
 };
-
 /*** APP.tsx */
 /* ----------------------------------------------------------------- */
 
@@ -200,7 +188,6 @@ export const App = () => {
                 <div className="App">
                     <header className="App-header">
                         <h1>Welcome to Paul's Shop!</h1>
-
                         {/* Navigation links */}
                         <nav>
                             <ul>
@@ -215,7 +202,6 @@ export const App = () => {
                             </ul>
                         </nav>
                     </header>
-
                     <main>
                         {/* Routes definition */}
                         <Routes>
@@ -236,7 +222,6 @@ export const App = () => {
         </ShopProvider>
     );
 };
-
 /*** SHOP_CONTEXT.tsx (AND REDUCER) */
 /* ----------------------------------------------------------------- */
 
@@ -244,31 +229,26 @@ export const App = () => {
 interface CartItem extends Product {
     quantity: number;
 }
-
 // State interface for the shop containing products and items in the cart
 interface ShopState {
     products: Product[];
     cart: CartItem[];
 }
-
 // Initial state of the shop context
 const initialState: ShopState = {
     products: [], // Initial products, this can be populated from the API later on
     cart: [], // Initial cart is empty
 };
-
 // Create a context for the shop
 export const ShopContext = createContext<
     [ShopState, React.Dispatch<ShopAction>]
 >([initialState, () => {}]);
 
 // REDUCER --------------------------------------------------------- */
-
 // Define possible actions for the shop
 type ShopAction =
     | { type: "ADD_TO_CART"; product: Product }
     | { type: "REMOVE_FROM_CART"; product: Product };
-
 // Reducer function to handle state changes for the shop
 const shopReducer = (
     state: ShopState,
@@ -329,14 +309,11 @@ const shopReducer = (
             return state;
     }
 };
-
 // PROVIDER ------------------------------------------------------ */
-
 // Props definition for the ShopProvider component
 interface ShopProviderProps {
     children: React.ReactNode;
 }
-
 // Provider component to wrap around parts of the app where shop context is needed
 export const ShopProvider: React.FC<ShopProviderProps> = ({
     children,
@@ -351,9 +328,7 @@ export const ShopProvider: React.FC<ShopProviderProps> = ({
         </ShopContext.Provider>
     );
 };
-
 // CUSTOM HOOK --------------------------------------------------- */
-
 // Custom hook to easily access the shop context in any component
 export const useShop = () => {
     const context = useContext(ShopContext);
@@ -386,13 +361,11 @@ export const useShop = () => {
 
 /*** SEARCH_BAR.tsx */
 /* --------------------------------------------------------------- */
-
 // Props definition for the SearchBar component
 interface SearchBarProps {
     onSearch: (searchTerm: string) => void; // Callback to handle search functionality
     onSort: (sortType: string) => void; // Callback to handle sort functionality
 }
-
 // SearchBar component
 const SearchBar: React.FC<SearchBarProps> = ({
     onSearch,
@@ -414,7 +387,6 @@ const SearchBar: React.FC<SearchBarProps> = ({
     ) => {
         onSort(e.target.value); // Trigger the onSort callback with the selected sort type
     };
-
     return (
         <div className="search-bar">
             {/* Search input */}

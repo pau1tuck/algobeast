@@ -6,7 +6,6 @@ type State = {
     isLoading: boolean;
     error: string | null;
 };
-
 class MyComponent extends Component<{}, State> {
     constructor(props: {}) {
         super(props);
@@ -18,14 +17,11 @@ class MyComponent extends Component<{}, State> {
             error: null,
         };
     }
-
     componentDidMount() {
         this.fetchData();
     }
-
     fetchData = async () => {
         this.setState({ isLoading: true });
-
         try {
             const response = await fetch("http://localhost:5000/api");
             const data = await response.json();
@@ -35,7 +31,6 @@ class MyComponent extends Component<{}, State> {
             this.setState({ error: error.message, isLoading: false });
         }
     };
-
     handleInputChange = (
         event: React.ChangeEvent<HTMLInputElement>,
     ) => {
@@ -52,7 +47,6 @@ class MyComponent extends Component<{}, State> {
         const { newItem, data } = this.state;
         this.setState({ data: [...data, newItem], newItem: "" });
     };
-
     render() {
         const { data, newItem, isLoading, error } = this.state;
 
@@ -78,12 +72,10 @@ class MyComponent extends Component<{}, State> {
         );
     }
 }
-
 export default MyComponent;
 
 /* LIFECYCLE METHODS */
 /*** -------------------------------------- ***/
-
 // Define the props and state types (assuming we're just using a basic state to showcase the lifecycle methods)
 interface MyComponent1Props {
     message: string;
@@ -92,7 +84,6 @@ interface MyComponent1Props {
 interface MyComponent1State {
     count: number;
 }
-
 class MyComponent1 extends React.Component<
     MyComponent1Props,
     MyComponent1State
@@ -104,12 +95,10 @@ class MyComponent1 extends React.Component<
             count: 0,
         };
     }
-
     // Runs after the component output has been rendered to the DOM.
     componentDidMount() {
         console.log("Component Did Mount!");
     }
-
     // Runs before the component receives new props or state.
     shouldComponentUpdate(
         nextProps: MyComponent1Props,
@@ -118,7 +107,6 @@ class MyComponent1 extends React.Component<
         console.log("Should Component Update?");
         return true; // Return false if you don't want to re-render on state or prop changes.
     }
-
     // Runs right before the DOM gets updated.
     getSnapshotBeforeUpdate(
         prevProps: MyComponent1Props,
@@ -127,7 +115,6 @@ class MyComponent1 extends React.Component<
         console.log("Get Snapshot Before Update");
         return null; // Return value will be passed to componentDidUpdate
     }
-
     // Runs after the component's updates are flushed to the DOM.
     componentDidUpdate(
         prevProps: MyComponent1Props,
@@ -136,12 +123,10 @@ class MyComponent1 extends React.Component<
     ) {
         console.log("Component Did Update!");
     }
-
     // Runs right before the component gets destroyed.
     componentWillUnmount() {
         console.log("Component Will Unmount!");
     }
-
     // Renders the component to the DOM.
     render() {
         return (
