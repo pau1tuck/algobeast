@@ -1,12 +1,9 @@
 class Student {
     private _name: string; // Private property, accessible only within the class.
-
     // Static property, belongs to the class rather than an instance of the class.
     static university = "University of Oxford";
-
     // Public property, accessible from outside the class.
     public age: number;
-
     // A special method for creating and initializing an object of a class.
     constructor(name: string, age: number) {
         this._name = name;
