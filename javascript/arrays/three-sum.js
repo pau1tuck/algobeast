@@ -23,7 +23,9 @@ function threeSum(nums) {
         }
     }
     return result;
-}
+} /* Time Complexity: O(n^2), where n is the number of elements in the array.
+The outer loop runs in O(n), and the inner two-pointer scan runs in O(n) per fixed element.
+Space Complexity: O(1) or O(n), depending on whether the sorting space is considered. */
 
 /* 1. Sort the Array: First, sort the array if it isn't already. This makes it easier to navigate and avoid duplicates.
 
