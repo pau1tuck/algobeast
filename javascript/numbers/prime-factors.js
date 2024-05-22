@@ -20,6 +20,6 @@ const findPrimeFactors = (num) => {
   }; // O(sqrt(n)) time, O(log n) space/memory
   /* In this function, the main loop runs until i * i <= num, which essentially goes up to the square root of num.
   Therefore, the time complexity is O(sqrt(n)), where n is the number you're finding the prime factors of.
-  This makes the algorithm quite efficient for large numbers.
-  The space complexity is O(log n) because in the worst case (when n is a product of 2's),
+  This makes the algorithm quite efficient for large numbers. */
+  /* The space complexity is O(log n) because in the worst case (when n is a product of 2's),
   the number of factors (and hence the size of the factors array) will be proportional to the logarithm of n. */

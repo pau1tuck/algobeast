@@ -1,6 +1,6 @@
 // Find a contiguous subarray within a one-dimensional array of numbers that has the largest sum.
 
-function maxSubarraySum(arr) {
+function maxSubarraySumKadane(arr) {
     if (arr.length === 0) return 0; // Edge case
 
     let maxEndingHere = arr[0]; // Initialize with the first element
