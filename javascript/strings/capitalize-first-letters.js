@@ -10,5 +10,3 @@ function capitalizeWordsCharAt(s) {
 function capitalizeWordsRegex(s) {
     return s.replace(/\b\w/g, char => char.toUpperCase());
 } // Time: O(n), Space: O(n)
-// Example usage
-console.log(capitalizeWords("hello world")); // Outputs: "Hello World"

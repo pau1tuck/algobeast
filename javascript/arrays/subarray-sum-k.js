@@ -14,7 +14,6 @@ function subarraySum(nums, k) {
         }
         map.set(sum, (map.get(sum) || 0) + 1);
     }
-
     return count;
 }
 
