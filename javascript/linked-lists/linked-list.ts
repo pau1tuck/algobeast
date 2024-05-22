@@ -10,11 +10,9 @@ class NodeTS_<T> {
 
 class LinkedListTS<T> {
     head: NodeTS_<T> | null;
-
     constructor() {
         this.head = null;
     }
-
     // Append a node at the end
     append(value: T): void {
         const newNodeTS_ = new NodeTS_(value);
@@ -29,13 +27,11 @@ class LinkedListTS<T> {
         }
         current.next = newNodeTS_;
     }
-
     insertAtBeginning(value: T): void {
         const newNode = new NodeTS_(value);
         newNode.next = this.head;
         this.head = newNode;
     }
-
     insertAt(value: T, index: number): void {
         const newNodeTS_ = new NodeTS_(value);
         if (index === 0) {
@@ -51,13 +47,11 @@ class LinkedListTS<T> {
         newNodeTS_.next = previous.next;
         previous.next = newNodeTS_;
     }
-
     // Get the value of a node at a specific index
     get(index: number): T | null {
         const node_ = this.getNodeTS_At(index);
         return node_ ? node_.value : null;
     }
-
     // Remove a node at a specific index
     removeAt(index: number): void {
         if (index === 0) {
@@ -67,7 +61,6 @@ class LinkedListTS<T> {
             this.head = this.head.next;
             return;
         }
-
         const previous = this.getNodeTS_At(index - 1);
         if (!previous || !previous.next) {
             throw new Error("Index out of bounds");
@@ -75,7 +68,6 @@ class LinkedListTS<T> {
 
         previous.next = previous.next.next;
     }
-
     // Remove the first node with the specified value
     deleteNode(value: T): void {
         if (!this.head) return;
@@ -94,7 +86,6 @@ class LinkedListTS<T> {
             current.next = current.next.next;
         }
     }
-
     getNodeTS_At(index: number): NodeTS_<T> | null {
         if (index < 0) {
             return null;
@@ -106,7 +97,6 @@ class LinkedListTS<T> {
         }
         return current;
     }
-
     printList(): void {
         let current = this.head;
         let result: T[] = [];
@@ -117,7 +107,6 @@ class LinkedListTS<T> {
         console.log(result.join(" -> "));
     }
 }
-
 // Usage example with edge cases
 const listTS = new LinkedListTS<number>();
 list.append(1);
