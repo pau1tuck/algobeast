@@ -19,23 +19,40 @@ Output:
 Output the results of each type 2 query in the order they are presented. */
 
 function dynamicArray(n, queries) {
-    const arr = new Array(n).fill().map(() => []); // e.g. [ [], [], [] ] .fill() defaults to undefined.
+    let arr = Array(n).fill().map(() => []);
+    let answer = [];
     let lastAnswer = 0;
-    const answers = [];
 
-    for (let query of queries) {
-        const [type, x, y] = query.split(' ').map(Number);
-        const idx = (x ^ lastAnswer) % n;
-
-        if (type === 1) {
-            arr[idx].push(y);
-        } else if (type === 2) {
-            lastAnswer = arr[idx][y % arr[idx].length];
-            answers.push(lastAnswer);
+    const queryOne = (x, y) => {
+        let idx = (x ^ lastAnswer) % n;
+        arr[idx].push(y);
+    }
+    const queryTwo = (x, y) => {
+        let idx = (x ^ lastAnswer) % n;
+        lastAnswer = arr[idx][y % arr[idx].length];
+        answer.push(lastAnswer);
+    }
+    for (let q of queries) {
+        if (q[0] === 1) {
+            queryOne(q[1], q[2]);
+        } else if (q[0] === 2) {
+            queryTwo(q[1], q[2]);
         }
     }
-    return answers;
+    return answer;
 }
+// Example input as a single string
+const input = `2 5
+    1 0 5
+    1 1 7
+    1 0 3
+    2 1 0
+    2 1 1`;
+
+// Call the function with the entire input as a string
+console.log(dynamicArray(input)); // Should output the results of type 2 queries
+
+
 // Example usage
 const n = 2;
 const queries = ["1 0 5", "1 1 7", "1 0 3", "2 1 0", "2 1 1"];
