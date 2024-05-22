@@ -26,3 +26,9 @@ function permCheck(A) {
     }
     return true; // The array is a valid permutation
 } // Time: O(n), where n is the number of elements in array A; Space: O(n), to hold the set of elements.
+
+/* Creating a Set: By converting the array into a set, you automatically filter out any duplicate values.
+The set should contain exactly `n` unique elements for the array to be a permutation.
+Checking Element Presence: Iterate from 1 to n and check if every number in this range is present in the set.
+Missing any number means the array isn't a full permutation.
+Return Values: Return 1 if all conditions are met (indicating it's a permutation), otherwise return 0. */
