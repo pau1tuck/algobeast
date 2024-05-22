@@ -1,21 +1,18 @@
 // Define the decorator
-function IsPalindrome(
+const IsPalindrome = (
     target: any,
     propertyKey: string,
     descriptor: PropertyDescriptor,
-) {
+) => {
     // Save a reference to the original method (this is the method being decorated)
     const originalMethod = descriptor.value;
-
     // Redefine the method's implementation
     descriptor.value = function (...args: any[]) {
         // Get the first argument passed to the method (in our case, the string to check)
         const inputString = args[0];
-
         // Check if the string is a palindrome
         const isPalindrome =
             inputString === inputString.split("").reverse().join("");
-
         // Return the result based on the palindrome check
         if (isPalindrome) {
             return `${inputString} is a palindrome!`;

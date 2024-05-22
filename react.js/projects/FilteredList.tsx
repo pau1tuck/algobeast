@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-
 // FilteredList.tsx
 // Define the type for individual list items
 interface ListItem {

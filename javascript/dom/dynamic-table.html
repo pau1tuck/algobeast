@@ -1,0 +1,55 @@
+/* Instructions: Write JavaScript code to create a table dynamically from a given array of objects. Each object in the array represents a row in the table. Additionally, provide functionality to add a new row to the table based on user input. */
+
+const data = [
+    { name: "John Doe", age: 30, occupation: "Developer" },
+    { name: "Jane Doe", age: 25, occupation: "Designer" }
+];
+
+/* 1. Create a table with headers corresponding to the keys in the objects (name, age, occupation).
+2. Populate the table with initial data.
+3. Provide an input form to add new rows to the table. */
+
+<div>
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Occupation</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <form id="dataForm">
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="number" id="age" placeholder="Age" required>
+        <input type="text" id="occupation" placeholder="Occupation" required>
+        <button type="submit">Add Row</button>
+    </form>
+</div>
+
+<script>
+document.getElementById("dataForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  const name = document.getElementById("name").value;
+  const age = document.getElementById("age").value;
+  const occupation = document.getElementById("occupation").value;
+  addRow(name, age, occupation);
+});
+function addRow(name, age, occupation) {
+  const table = document.getElementById("dataTable").getElementsByTagName('tbody')[0];
+  const newRow = table.insertRow(table.rows.length);
+
+  newRow.insertCell(0).textContent = name;
+  newRow.insertCell(1).textContent = age;
+  newRow.insertCell(2).textContent = occupation;
+
+  // Clear inputs
+  document.getElementById("name").value = '';
+  document.getElementById("age").value = '';
+  document.getElementById("occupation").value = '';
+}
+// Initialize table with data
+data.forEach(item => addRow(item.name, item.age, item.occupation));
+</script>
