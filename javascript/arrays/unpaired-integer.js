@@ -10,14 +10,11 @@ Write a function: `function solution(A);` that, given an array A consisting of N
 
 function findUnpairedInteger(arr) {
     let result = 0;
-
     for (const num of arr) {
         result ^= num; // XOR operation
     }
-
     return result;
 }
-
 /* -------------------------------------------- */
 // Example array
 const inputArray = [9, 3, 9, 3, 7, 5, 7];

@@ -2,7 +2,7 @@
 Input: string `text` and string `pattern`.
 Output: arr[int], the positions of the text in the string. */
 
-function naiveSearch(text, pattern) {
+function naiveSubstringSearch(text, pattern) {
     let positions = [];
     for (let i = 0; i <= text.length - pattern.length; i++) {
         for (let j = 0; j < pattern.length; j++) {
@@ -15,14 +15,15 @@ function naiveSearch(text, pattern) {
         }
     }
     return positions;
-}
+} // Time: O(n*m), where n is the length of the text and m is the length of the pattern.
+// In the worst case, every character of the text is compared with every character of the pattern.
+// Space: O(1), as no additional space is needed beyond variables for iteration.
 
 // ======================================
 function buildLPS(pattern) { // Longest Prefix which is also Suffix
     let lps = Array(pattern.length).fill(0);
     let length = 0;
     let i = 1;
-
     while (i < pattern.length) {
         if (pattern[i] === pattern[length]) {
             length++;
@@ -39,7 +40,6 @@ function buildLPS(pattern) { // Longest Prefix which is also Suffix
     }
     return lps;
 }
-
 function kmpSearch(text, pattern) { // Knuth-Morris-Pratt search
     let lps = buildLPS(pattern);
     let i = 0; // index for text

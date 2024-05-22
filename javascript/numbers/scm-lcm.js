@@ -6,11 +6,9 @@ function gcd(a, b) {
     }
     return a;
 }
-
 function scm(a, b) {
     return (a * b) / gcd(a, b);
 }
-
 function smallestCommonMultiple(arr) {
     let [min, max] = arr.sort((a, b) => a - b);
     let currentScm = min;
