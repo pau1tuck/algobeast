@@ -22,7 +22,6 @@ function dynamicArray(n, queries) {
     let arr = Array(n).fill().map(() => []);
     let answer = [];
     let lastAnswer = 0;
-
     const queryOne = (x, y) => {
         let idx = (x ^ lastAnswer) % n;
         arr[idx].push(y);

@@ -1,4 +1,5 @@
-/* Instructions: Write a function to find the length of the longest consecutive sequence of elements in an array of integers. The elements are not required to be in order within the array.
+/* Instructions: Write a function to find the length of the longest consecutive sequence of elements in an array of integers.
+The elements are not required to be in order within the array.
 Input: An array of integers, arr.
 Output: An integer representing the length of the longest sequence of consecutive numbers in the array. */
 
@@ -8,7 +9,6 @@ function longestConsecutiveSet(arr) {
     }
     const set = new Set(arr);
     let longestStreak = 0;
-
     for (const num of set) {
         // Only start counting if 'num' is the start of a sequence
         if (!set.has(num - 1)) {
