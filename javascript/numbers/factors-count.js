@@ -25,6 +25,6 @@ function countFactors(N) {
 /* Time Complexity: O(√N): The function only iterates up to the square root of N.
 For each factor found that is less than the square root,
 there is typically a corresponding factor greater than the square root,
-thus reducing the number of iterations significantly compared to iterating up to N.
-Space Complexity: O(1): The space used by the algorithm is constant,
+thus reducing the number of iterations significantly compared to iterating up to N. */
+/* Space Complexity: O(1): The space used by the algorithm is constant,
 regardless of the input size. Only a fixed number of variables (count, i) are used. */
