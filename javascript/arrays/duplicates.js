@@ -5,7 +5,6 @@ const removeDuplicates = arr => {
     const uniqueArray = Array.from(new Set(arr));
     return uniqueArray;
 };
-
 const hasDuplicates = arr => {
     // Remove duplicates:
     const numsSet = new Set(arr);
@@ -14,7 +13,6 @@ const hasDuplicates = arr => {
     // If sizes are not equal, it means there were duplicates in the array.
     return !sizesAreEqual;
 };
-
 const findDuplicates = arr => {
     const elementCount = {}; // Object to hold the count of each element
     const duplicates = []; // Array to hold the duplicated elements
