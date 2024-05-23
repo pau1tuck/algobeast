@@ -29,7 +29,7 @@ class MinStack {
     getMin() {
         return this.minStack[this.minStack.length - 1];
     }
-}
+} // Time: O(1), Space: O(n)
 const minStack = new MinStack();
 minStack.push(-2);
 minStack.push(0);
