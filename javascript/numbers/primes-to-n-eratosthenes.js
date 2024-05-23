@@ -7,7 +7,6 @@ Remember, a prime number is a natural number greater than 1 that has no positive
 function sieveOfEratosthenes(n) {
     let primes = Array(n + 1).fill(true); // Create an array of truth values, indexed by numbers 0 to n, initially set all to true.
     primes[0] = primes[1] = false; // 0 and 1 are not primes.
-
     for (let number = 2; number * number <= n; number++) {
         if (primes[number]) {
             // If the number is a prime, then go ahead and mark its multiples as not prime.

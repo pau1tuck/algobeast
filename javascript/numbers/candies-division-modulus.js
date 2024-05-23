@@ -4,11 +4,10 @@ Determine how many pieces of candy will be eaten by all of the children together
 
 function shareCandies(n, m) { // e.g. 3, 7
     return m - (m % n); // e.g. 7 - (7 % 3 = 1) = 6
-}
-//  O(1) time | O(1) space
+} // Time O(1), Space O(1)
 
 function shareCandies2(n, m) {
     let children = n;
     let candy = m;
     return Math.floor(candy / children) * children;
-}
+} // Time O(1), Space O(1)
