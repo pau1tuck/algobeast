@@ -17,5 +17,4 @@ function subarraySum(nums, k) {
     return count;
 }
 
-// Example usage:
 console.log(subarraySum([1, 1, 1], 2)); // 2

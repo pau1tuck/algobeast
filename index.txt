@@ -4,11 +4,12 @@ Arrays
     duplicates: removeDuplicates; hasDuplicates; findDuplicates
     first-non-repeating-int: Write a function to find the first non-repeating number in a given array of integers.
     kth-order:
-    longest-consecutive: Write a function to find the length of the longest consecutive elements sequence in an array of integers. The elements are not required to be in order within the array.
+    longest-consecutive: Write a function to find the length of the longest consecutive elements sequence in an array of integers. The elements are not required to be in order within the array.¡
 
 Linked Lists
 
 Numbers
+binary-conversion: Write a function that converts a non-negative integer into its binary representation as a string.
 
 Strings
 
