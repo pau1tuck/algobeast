@@ -22,12 +22,10 @@
  * Time Complexity: O(n log k), where n is the number of elements in the array.
  * Space Complexity: O(k), for storing the k elements in the heap.
  */
-
 class MinHeap {
     constructor() {
         this.heap = [];
     }
-
     // Helper functions to get the indices of parent and children
     getParentIndex(i) { return Math.floor((i - 1) / 2); }
     getLeftChildIndex(i) { return 2 * i + 1; }
@@ -83,7 +81,6 @@ class MinHeap {
     peek() {
         return this.heap[0];
     }
-
     // Get the size of the heap
     size() {
         return this.heap.length;
@@ -97,7 +94,6 @@ function findKthLargest(arr, k) {
             minHeap.remove();
         }
     }
-
     return minHeap.peek();
 }
 const arr = [3, 2, 1, 5, 6, 4];
