@@ -5,7 +5,6 @@ function inOrderTraversal(root) {
         inOrderTraversal(root.right);
     }
 }
-
 function preOrderTraversal(root) {
     if (root !== null) {
         console.log(root.value);
@@ -13,7 +12,6 @@ function preOrderTraversal(root) {
         preOrderTraversal(root.right);
     }
 }
-
 function postOrderTraversal(root) {
     if (root !== null) {
         postOrderTraversal(root.left);

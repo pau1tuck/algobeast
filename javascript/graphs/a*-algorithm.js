@@ -15,21 +15,17 @@ Input: A 2D grid where each cell has a value:
     A start coordinate as a tuple (startX, startY).
     An end coordinate as a tuple (endX, endY).
 Output: An array of coordinates representing the path from the start to the end (inclusive). Return an empty array if no path exists. */
-
 class PriorityQueue {
     constructor() {
         this.elements = [];
     }
-
     enqueue(priority, item) {
         this.elements.push({ priority, item });
         this.elements.sort((a, b) => a.priority - b.priority);
     }
-
     dequeue() {
         return this.elements.shift().item;
     }
-
     isEmpty() {
         return this.elements.length === 0;
     }
@@ -55,14 +51,12 @@ function aStar(grid, start, end) {
         if (currentKey === endKey) {
             return reconstructPath(cameFrom, current);
         }
-
         for (let dx = -1; dx <= 1; dx++) {
             for (let dy = -1; dy <= 1; dy++) {
                 if (dx === 0 && dy === 0) continue;
                 const nextX = current.x + dx;
                 const nextY = current.y + dy;
                 const nextKey = `${nextX},${nextY}`;
-
                 if (
                     nextX >= 0 &&
                     nextX < grid.length &&
