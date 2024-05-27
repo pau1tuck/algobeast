@@ -4,6 +4,7 @@ let bufferFive = Buffer.from("ABC");
 
 let bufferEight = Buffer.alloc(7);
 // Buffer.compare() returns a number indicating whether bufferOne comes before, after, or is the same as bufferTwo in sort order.
+Buffer.allocUnsafe(); // creates a new buffer of the specified size without initializing the memory, which can contain old and potentially sensitive data, making it faster but less secure.
 console.log(Buffer.compare(bufferFive, bufferSix)); // Outputs: -1
 let bufferFour = Buffer.concat([bufferTwo, bufferThree]); // returns a new buffer
 // Buffer.copy() method copies data from a region of target buffer to a region in the source buffer.
