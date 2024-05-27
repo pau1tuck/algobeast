@@ -1,65 +1,43 @@
-// Node.js Global Buffer Class
+// Buffer.from() method creates a new Buffer that contains a copy of the provided data.
+let bufferOne = Buffer.from("Hello, World!"); // bufferOne.toString() = "Hello, World!"
+// Buffer.toString() method reads (decodes) and returns a string from buffer data.
+console.log(bufferTwo.toString()); // Outputs: Node.js
 
-// 1. Create a Buffer
-// Buffer.from() method returns a new Buffer that contains a copy of the provided data.
-let bufferOne = Buffer.from("Hello, World!");
-console.log(bufferOne.toString()); // Outputs: Hello, world!
+console.log(bufferOne.length); // Outputs: 13, the amount of memory allocated for the buffer in bytes.
 
-// 2. Buffer Length
-// The "length" property of a Buffer instance represents the amount of memory allocated for the buffer in bytes.
-console.log(bufferOne.length); // Outputs: 13
-
-// 3. Writing to Buffers
-// Buffer.write() method writes a string to the buffer at a specific offset.
 let bufferTwo = Buffer.alloc(10);
-bufferTwo.write("Node.js");
-console.log(bufferTwo.toString()); // Outputs: Node.js
+bufferTwo.write("Node.js"); // writes a string to the buffer at a specific offset.
 
-// 4. Reading from Buffers
-// Buffer.toString() method decodes and returns a string from buffer data.
-console.log(bufferTwo.toString()); // Outputs: Node.js
-
-// 5. Buffer Concatenation
-// Buffer.concat() method returns a new buffer which is the result of concatenating all the Buffer instances in the array.
 let bufferThree = Buffer.from(" is awesome!");
-let bufferFour = Buffer.concat([bufferTwo, bufferThree]);
+let bufferFour = Buffer.concat([bufferTwo, bufferThree]); // returns a new buffer
 console.log(bufferFour.toString()); // Outputs: Node.js is awesome!
 
-// 6. Buffer Comparison
-// Buffer.compare() method returns a number indicating whether bufferOne comes before, after, or is the same as bufferTwo in sort order.
 let bufferFive = Buffer.from("ABC");
 let bufferSix = Buffer.from("BCD");
+// Buffer.compare() returns a number indicating whether bufferOne comes before, after, or is the same as bufferTwo in sort order.
 console.log(Buffer.compare(bufferFive, bufferSix)); // Outputs: -1
 
-// 7. Buffer Copy
-// Buffer.copy() method copies data from a region of target buffer to a region in the source buffer.
 let bufferSeven = Buffer.from("Hello, Node.js!");
 let bufferEight = Buffer.alloc(7);
+// Buffer.copy() method copies data from a region of target buffer to a region in the source buffer.
 bufferSeven.copy(bufferEight, 0, 0, 7);
 console.log(bufferEight.toString()); // Outputs: Hello,
 
-// 8. Buffer Slicing
-// Buffer.slice() method returns a new buffer that references the same memory as the original, but offset and cropped by the start and end indices.
+// Buffer.slice() returns new buffer that references the same memory as the original, offset and cropped by the start and end indices.
 let bufferNine = bufferSeven.slice(0, 5);
 console.log(bufferNine.toString()); // Outputs: Hello
 
-/* TypedArrays like Uint8Array give you a way to work with binary data at the byte level.
-DataView provides a higher-level API for getting and setting values of specific types
-(like unsigned 8-bit integers, signed 16-bit integers, floating point numbers, etc.)
-at specific offsets in the binary data.  */
+/* TypedArrays like Uint8Array give you a way to work with binary data at the byte level. DataView provides a higher-level API for getting and setting values of specific types (like unsigned 8-bit integers, signed 16-bit integers, floating point numbers, etc.) at specific offsets in the binary data.  */
 
 /* Imagine you're receiving binary data that represents a simple file format. This hypothetical format contains:
-
-- A header with two unsigned 8-bit integers representing width and height.
-- A sequence of pixels, each represented by three unsigned 8-bit integers for red, green, and blue values.
-
+    - A header with two unsigned 8-bit integers representing width and height.
+    - A sequence of pixels, each represented by three unsigned 8-bit integers for red, green, and blue values.
 We'll use a Uint8Array (a kind of TypedArray) to handle the raw binary data and a DataView to extract structured data from it. */
 
-// Example binary data (received from some source, e.g., WebSocket, AJAX, or file reading)
+// Example binary data (received from source, e.g., WebSocket, AJAX, or file reading)
 const binaryData = new Uint8Array([
     10, 20, 255, 0, 0, 0, 255, 0, 0, 0, 255,
 ]);
-
 // Creating a DataView from the TypedArray
 const view = new DataView(binaryData.buffer);
 
