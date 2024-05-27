@@ -1,19 +1,15 @@
+import EventEmitter from "node:events";
+const events = require("node:events");
+
 logger.on("request", url => {
-    // ON
     console.log(`Request made to: ${url}`);
 });
-
 logger.on("error", errorMessage => {
-    // ON
     console.error(`Error encountered: ${errorMessage}`);
 });
-
 // Server
 const server = http.createServer(
-    (
-        req,
-        res, // EMIT
-    ) => logger.emit("request", req.url),
+    (req, res,) => logger.emit("request", req.url),
 ); // `request` event
 
 // Endpoint event emit
