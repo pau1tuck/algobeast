@@ -1,0 +1,26 @@
+<body>
+    <div id="container">
+        <h1>DOM Manipulation</h1>
+        <button id="addParagraph">Add Paragraph</button>
+        <button id="changeHeading">Change Heading</button>
+        <button id="removeLastParagraph">Remove Last Paragraph</button>
+    </div>
+    <script>
+        document.getElementById("addParagraph").addEventListener("click", () => {
+            const newPara = document.createElement("p");
+            newPara.textContent = "This is a new paragraph.";
+            document.getElementById("container").appendChild(newPara);
+        });
+        document.getElementById("changeHeading").addEventListener("click", () => {
+            const heading = document.querySelector("h1");
+            heading.textContent = "Heading Changed!";
+        });
+        document.getElementById("removeLastParagraph").addEventListener("click", () => {
+            const container = document.getElementById("container");
+            const lastParagraph = container.querySelector("p:last-of-type");
+            if (lastParagraph) {
+                container.removeChild(lastParagraph);
+            }
+        });
+    </script>
+</body>

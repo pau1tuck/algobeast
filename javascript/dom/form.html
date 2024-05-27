@@ -1,0 +1,87 @@
+<body>
+    <form id="comprehensiveForm">
+        <label for="text">Text:</label>
+        <input type="text" id="text" name="text" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="tel">Telephone:</label>
+        <input type="tel" id="tel" name="tel">
+        <br>
+        <label for="url">URL:</label>
+        <input type="url" id="url" name="url">
+        <br>
+        <label for="number">Number:</label>
+        <input type="number" id="number" name="number" min="0" max="100">
+        <br>
+        <label for="range">Range:</label>
+        <input type="range" id="range" name="range" min="0" max="100">
+        <br>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date">
+        <br>
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time">
+        <br>
+        <label for="datetime-local">Datetime Local:</label>
+        <input type="datetime-local" id="datetime-local" name="datetime-local">
+        <br>
+        <label for="month">Month:</label>
+        <input type="month" id="month" name="month">
+        <br>
+        <label for="week">Week:</label>
+        <input type="week" id="week" name="week">
+        <br>
+        <label for="color">Color:</label>
+        <input type="color" id="color" name="color">
+        <br>
+        <label for="file">File:</label>
+        <input type="file" id="file" name="file">
+        <br>
+        <label for="checkbox">Checkbox:</label>
+        <input type="checkbox" id="checkbox" name="checkbox">
+        <br>
+        <label for="radio">Radio:</label>
+        <input type="radio" id="radio" name="radio" value="option1"> Option 1
+        <input type="radio" id="radio" name="radio" value="option2"> Option 2
+        <br>
+        <label for="select">Select:</label>
+        <select id="select" name="select">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+        </select>
+        <br>
+        <label for="textarea">Textarea:</label>
+        <textarea id="textarea" name="textarea"></textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="formFeedback"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const comprehensiveForm = document.getElementById('comprehensiveForm');
+            const formFeedback = document.getElementById('formFeedback');
+
+            comprehensiveForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const formData = new FormData(comprehensiveForm);
+                let feedback = '';
+
+                formData.forEach((value, key) => {
+                    feedback += `${key}: ${value}\n`;
+                });
+
+                formFeedback.textContent = `Form submitted successfully!\n${feedback}`;
+                comprehensiveForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>
