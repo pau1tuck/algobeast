@@ -9,6 +9,8 @@ type State = {
 class MyComponent extends Component<{}, State> {
     constructor(props: {}) {
         super(props);
+        this.handleUserDetails = this.handleUserDetails.
+        bind(this);
 
         this.state = {
             data: [],
@@ -16,6 +18,9 @@ class MyComponent extends Component<{}, State> {
             isLoading: false,
             error: null,
         };
+    }
+    handleUserDetails() {
+    console.log("Show User details");
     }
     componentDidMount() {
         this.fetchData();
@@ -36,7 +41,6 @@ class MyComponent extends Component<{}, State> {
     ) => {
         this.setState({ newItem: event.target.value });
     };
-
     handleSubmit = async (
         event: React.FormEvent<HTMLFormElement>,
     ) => {
@@ -49,10 +53,8 @@ class MyComponent extends Component<{}, State> {
     };
     render() {
         const { data, newItem, isLoading, error } = this.state;
-
         if (isLoading) return <p>Loading...</p>;
         if (error) return <p>Error: {error}</p>;
-
         return (
             <div>
                 <ul>

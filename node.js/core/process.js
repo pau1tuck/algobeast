@@ -1,4 +1,4 @@
-const process = require("process"); // Though not strictly required, since process is a global object in Node.js
+const process = require("node:process"); // Though not strictly required, since process is a global object in Node.js
 
 process.stdin.on("data", data => {
     process.stdout.write(`You typed: ${data}`);
@@ -8,7 +8,6 @@ process.stdout.write("This is a message to the standard output.\n");
 process.stderr.write(
     "This is an error message to the standard error.\n",
 );
-
 process.nextTick(() => {
     // Do something
 }); // Ensures the callback runs before any I/O events are fired in the next tick of the event loop.
@@ -20,12 +19,10 @@ process.on("uncaughtException", err => {
     console.error("There was an uncaught error", err);
     process.exit(0); // Recommended to exit after an uncaughtException
 }); // Registers an event listener for the 'uncaughtException' event.
-
 // Do some work
 if (errorOccurred) {
     process.exitCode = 1; // Something went wrong
 }
-
 process.argv; // Returns an array containing the command line arguments.
 process.cwd(); // Returns the current working directory of the process.
 process.chdir("/tmp"); // Changes the current working directory.
