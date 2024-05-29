@@ -5,23 +5,19 @@ const Counter: FunctionComponent = () => {
         const savedCount = localStorage.getItem("count");
         return savedCount !== null ? Number(savedCount) : 0;
     });
-
     const increment = () => {
         setCount((prevCount: number) =>
             prevCount < 5 ? prevCount + 1 : prevCount,
         );
     };
-
     const decrement = () => {
         setCount((prevCount: number) =>
             prevCount > 0 ? prevCount - 1 : 0,
         );
     };
-
     const reset = () => {
         setCount(0);
     };
-
     useEffect(() => {
         localStorage.setItem("count", count.toString());
         document.title = `Count: ${count}`;

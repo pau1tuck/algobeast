@@ -9,9 +9,7 @@ type State = {
 class MyComponent extends Component<{}, State> {
     constructor(props: {}) {
         super(props);
-        this.handleUserDetails = this.handleUserDetails.
-        bind(this);
-
+        this.handleUserDetails = this.handleUserDetails.bind(this);
         this.state = {
             data: [],
             newItem: "",
@@ -20,7 +18,10 @@ class MyComponent extends Component<{}, State> {
         };
     }
     handleUserDetails() {
-    console.log("Show User details");
+        console.log("Show User details");
+    }
+    handleUserDetailsNoBinding = () => {
+        console.log("Show User details");
     }
     componentDidMount() {
         this.fetchData();
