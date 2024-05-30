@@ -5,7 +5,10 @@ const promisifyFunction = promisify((arg, callback) => {
     // Typically some async action here
     callback(null, `Result for ${arg}`);
 });
+util.promisify(child_process.exec)
 promisifyFunction("test").then(console.log);
+promisify.custom = Symbol("util.promisify.custom"); // Symbol used to define custom promisify implementations.
+
 format("%s:%s", "foo", "bar", "baz"); // 'foo:bar baz' - Format a string.
 inspect({ a: 1, b: { c: 2 } }); // Inspects and returns a string representation of an object.
 types.isBigInt(123n); // Check if value is a BigInt.
@@ -19,8 +22,6 @@ deprecate(() => {
     // Functionality here
 }, "This function is deprecated!")(); // Marks a method as deprecated.
 isDeepStrictEqual({ a: 1 }, { a: 1 }); // Check if two values are deep strictly equal.
-
-promisify.custom = Symbol("util.promisify.custom"); // Symbol used to define custom promisify implementations.
 
 const sleep = promisify(setTimeout); // Uses the built-in setTimeout to create a promise-based "sleep" function.
 

@@ -2,6 +2,7 @@ import os from "os";
 const os = require("os");
 
 os.arch(); // Get the CPU architecture.
+os.cpus().length; // Get number of logical CPUs on system.
 os.cpus(); // Get information about each CPU core.
 os.totalmem(); // Get the total amount of system memory in bytes.
 os.freemem(); // Get the amount of free system memory in bytes.

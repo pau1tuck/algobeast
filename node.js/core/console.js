@@ -2,6 +2,8 @@
 const console = require("console");
 // Example 1: Basic logging
 console.log("This is a log message.");
+// Example 11: Clearing the console - On some platforms like browsers, this will clear the console
+console.clear();
 // Example 2: Info logging
 console.info("This is an info message.");
 // Example 3: Warning logging
@@ -26,12 +28,9 @@ console.group("Group 1");
 console.groupEnd("Group 1");
 console.log("This is inside Group 1");
 console.log("This is outside any group");
-
 // Example 7: Start and end a timer to measure durations
 console.time("Array initialization");
 let array = new Array(1000000).fill().map(Math.random);
 console.timeEnd("Array initialization");
 // Example 9: Trace - Displaying a stack trace
 console.trace("Here is a stack trace:");
-// Example 11: Clearing the console - On some platforms like browsers, this will clear the console
-console.clear();

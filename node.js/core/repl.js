@@ -1,18 +1,17 @@
 /* The repl module in Node.js provides a way to run a Read-Eval-Print Loop, commonly used for debugging and interacting with Node.js interactively. */
-
 import { start } from "node:repl";
-
 // Starting a simple REPL session
 // This will start an interactive REPL session where you can type JavaScript code.
 // You'd typically run this in a standalone script or directly via the Node.js command line.
+repl.break // ?
+repl.editor // ?
+repl.save // ?
 start();
-
 // Setting REPL prompt, and initial message
 start({
 	prompt: "My Custom REPL > ",
 	welcome: "Welcome to my custom REPL!",
 });
-
 // Example 3: Specifying input and output streams
 const inputStream = process.stdin;
 const outputStream = process.stdout;
@@ -20,7 +19,6 @@ start({
 	input: inputStream,
 	output: outputStream,
 });
-
 // Example 4: Evaluating input before execution
 start({
 	eval: (cmd, context, filename, callback) => {
@@ -35,7 +33,6 @@ start({
 		}
 	},
 });
-
 // Customizing the writer function
 start({
 	writer: (output) => {
@@ -46,7 +43,6 @@ start({
 		return output.toString();
 	},
 });
-
 // Example 6: Storing and retrieving context
 const r = start();
 r.context.myVariable = "This is stored in REPL context";
