@@ -18,9 +18,7 @@ type Action =
 type State = {
     count: number;
 };
-
 const initialState: State = { count: 0 };
-
 const counterReducer = (state: State, action: Action): State => {
     switch (action.type) {
         case INCREMENT:
@@ -33,20 +31,16 @@ const counterReducer = (state: State, action: Action): State => {
             throw new Error(`Unhandled action: ${action.type}`);
     }
 };
-
 type CounterContextType = {
     state: State;
     dispatch: React.Dispatch<Action>;
 };
-
-const CounterContext = createContext<CounterContextType | undefined>(
-    undefined,
-);
-
 type CounterProviderProps = {
     children: ReactNode;
 };
-
+const CounterContext = createContext<CounterContextType | undefined>(
+    undefined,
+);
 export const CounterProvider: React.FC<CounterProviderProps> = ({
     children,
 }) => {
@@ -54,14 +48,12 @@ export const CounterProvider: React.FC<CounterProviderProps> = ({
         counterReducer,
         initialState,
     );
-
     return (
         <CounterContext.Provider value={{ state, dispatch }}>
             {children}
         </CounterContext.Provider>
     );
 };
-
 export const useCounter = (): CounterContextType => {
     const context = useContext(CounterContext);
     if (!context) {
@@ -71,7 +63,6 @@ export const useCounter = (): CounterContextType => {
     }
     return context;
 };
-
 export const Counter: React.FC = () => {
     const { state, dispatch } = useCounter();
 
@@ -90,7 +81,6 @@ export const Counter: React.FC = () => {
         </div>
     );
 };
-
 const App: React.FC = () => {
     return (
         <CounterProvider>
@@ -98,7 +88,6 @@ const App: React.FC = () => {
         </CounterProvider>
     );
 };
-
 ReactDOM.render(
     <React.StrictMode>
         <App />

@@ -4,9 +4,7 @@ import React, { useReducer } from "react";
 interface State {
     count: number;
 }
-
 type Action = { type: "increment" } | { type: "decrement" };
-
 // Reducer function
 const reducer = (state: State, action: Action): State => {
     switch (action.type) {
@@ -18,7 +16,6 @@ const reducer = (state: State, action: Action): State => {
             return state;
     }
 };
-
 // Component
 const Counter: React.FC = () => {
     const [state, dispatch] = useReducer(reducer, { count: 0 });
@@ -35,5 +32,4 @@ const Counter: React.FC = () => {
         </div>
     );
 };
-
 export default Counter;
