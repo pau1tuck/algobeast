@@ -20,7 +20,6 @@ dns.promises.reverse('8.8.8.8').then(hostnames => {});
 dns.networkInterfaces();
 dns.setServers(['8.8.8.8', '8.8.4.4']);
 
-
 dns.promises.resolve4('example.com')
     .then(addresses => {
         console.log(`Addresses: ${addresses}`);
