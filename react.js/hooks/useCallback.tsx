@@ -5,25 +5,20 @@ type Item = {
     name: string;
     email: string;
 };
-
 interface SearchableListProps {
     items: Item[];
 }
-
 const SearchableList: FC<SearchableListProps> = ({ items }) => {
     const [query, setQuery] = useState<string>("");
-
     const handleSearch = useCallback(
         (event: React.ChangeEvent<HTMLInputElement>) => {
             setQuery(event.target.value);
         },
         [], // useCallback memoizes the entire function
     );
-
     const filteredItems = items.filter(item =>
         item.name.toLowerCase().includes(query.toLowerCase()),
     );
-
     return (
         <div>
             <input
@@ -42,5 +37,4 @@ const SearchableList: FC<SearchableListProps> = ({ items }) => {
         </div>
     );
 };
-
 export default SearchableList;

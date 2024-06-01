@@ -14,7 +14,6 @@ const allUsers: User[] = [
 
 const UserList = () => {
     const [search, setSearch] = useState("");
-
     const filteredUsers = useMemo(() => {
         return allUsers.filter(user =>
             user.name.toLowerCase().includes(search.toLowerCase()),
@@ -38,3 +37,29 @@ const UserList = () => {
 };
 
 export default UserList;
+
+const factorial = (number: number) => {
+    if (number <= 0) {
+        return "Number should be a positive value.";
+    } else if (number === 1) {
+        return 1;
+    } else {
+        return number * factorial(number - 1);
+    }
+}
+export function CounterFactorial() {
+    const [count, setCount] = useState<number>(0);
+    const [number, setNumber] = useState<number>(1);
+    const factorial = useMemo(() => factorial(number), [number]);
+    return (
+        <>
+            <h2>Counter: {count}</h2>
+            <button onClick={() => setCount(count + 1)}>Increment</button>
+            <h2>Factorial: {factorial}</h2>
+            <input
+                type="number"
+                value={number}
+                onClick={() => setNumber(number + 1)}
+            /> </>
+    );
+}
