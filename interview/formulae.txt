@@ -1,0 +1,21 @@
+Work rate = 1 / time to complete
+Combined work rate = workrate1 + workrate2...
+Total Amount Completed = Time * Combined Work Rate   OR   Productivity = Time * Efficiency
+Time = Total Amount Completed / Combined Rate
+Combined output = workdone1 + workdone2...      ((5/hr * 4hrs) + (3/hr * 4hrs))
+Efficiency = Output / Input
+Amount = Concentration % * Total Volume           30% * 500ml
+Concentration = Amount / Total Volume           (10% * 3 + 20% * 2) / 5
+D = S * T       S = D / T       T = S / D
+mps = km/h * (1000/3600)    =0.277777
+km/h = mps / (1000/3600)    =0.277777
+Increased Value = Original Value * 1.%inc
+Decreased Value = Original Value * 0.%dec
+Pre-Increase Amount = New Value / 1.%.inc
+Pre-Decrease Amount = New Value / 0.%dec
+% Change = (New - Original / Original) * 100
+Successive % Changes = Original * (1.%inc) * (1.%inc)
+Accumulated Money = P * (1 + interest / timesperyear) ^ timesperyear * years
+Simplifed Ratio = Amount1 / GCD : Amount2 / GCD
+Cost of New Amount = (Original Cost * New Amount) / Original Amount
+Share = Total Amount / Ratio Sum * Ratio 1 or 2
