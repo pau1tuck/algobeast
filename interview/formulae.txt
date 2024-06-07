@@ -9,13 +9,16 @@ Concentration = Amount / Total Volume           (10% * 3 + 20% * 2) / 5
 D = S * T       S = D / T       T = S / D
 mps = km/h * (1000/3600)    =0.277777
 km/h = mps / (1000/3600)    =0.277777
-Increased Value = Original Value * 1.%inc
-Decreased Value = Original Value * 0.%dec
-Pre-Increase Amount = New Value / 1.%.inc
-Pre-Decrease Amount = New Value / 0.%dec
-% Change = (New - Original / Original) * 100
-Successive % Changes = Original * (1.%inc) * (1.%inc)
+Percentage of x = Original Value * (%value / 100)
+New Value (inc) = Original Value * (1 + % increase / 100)
+New Value (dec) = Original Value * (% decrease / 100)
+Original Value (pre-inc) = New Value / (1 + % increase)
+Original Value (pre-dec) = New Value / (1 - % decrease)
+(By what) % increase = (New - Original / Original) * 100
+(By what) % decrease = (Original - New / Original) * 100
+Successive % increases = Original * (1.%inc) * (1.%inc)
 Accumulated Money = P * (1 + interest / timesperyear) ^ timesperyear * years
 Simplifed Ratio = Amount1 / GCD : Amount2 / GCD
-Cost of New Amount = (Original Cost * New Amount) / Original Amount
-Share = Total Amount / Ratio Sum * Ratio 1 or 2
+Share = Total Amount / Ratio Sum * Ratio 1 | 2
+
+Cost of New Amount = (Original Cost * New Amount) / Original Amount   ?????
