@@ -1,12 +1,12 @@
-// Create a counter function with a private state, which has increment and getValue functionality.
+// Create a counter function with a private state, which has `increment` and `getValue` functionality.
 const privateCounter = () => {
-    let count = 0;  // This is a private variable.
+    _count = 0; // Private field
     return {
         increment: (val = 1) => {
-            count += val;  // Increment the private count variable.
+            _count += val;  // Increment the private count variable.
         },
         getValue: () => {
-            return count;  // Return the current value of the private count variable.
+            return _count;  // Return the current value of the private count variable.
         },
     };
 };
@@ -24,6 +24,6 @@ console.log(counter.getValue()); // Outputs: 6
 
 The inner functions (increment and getValue) maintain access to the count variable even after the outer function (privateCounter) has executed.
 
-The typical "closure question" in technical interviews is to create a function that maintains a private state. Here’s how it works:
-- Outer Function: privateCounter creates a private variable count.
-- Inner Functions: The increment and getValue functions have access to count even after the privateCounter function has finished execution. */
+The key point is that the count variable is not accessible directly from outside the privateCounter function. It's encapsulated within the closure, and the inner functions keep a reference to it, allowing them to read and modify it even after the outer function has finished executing.
+
+This approach effectively simulates private variables using function scope. */
