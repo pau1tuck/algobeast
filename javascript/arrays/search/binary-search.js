@@ -3,10 +3,8 @@
 function binarySearch(arr, target) {
 	let left = 0; // Left pointer
 	let right = arr.length - 1; // Right pointer
-
 	while (left <= right) {
-		const mid = Math.floor((left + right) / 2); // Calculate mid index
-
+		const mid = Math.floor((left + right) / 2); // Calculate mid index (ave. of left and right pointers)
 		if (arr[mid] === target) {
 			return mid; // Target found, return index
 		}
